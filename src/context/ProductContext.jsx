@@ -5,6 +5,7 @@ export const ProductContext = createContext();
 
 export const ProductProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
+  const [cartItems, setCartItems] = useState([]);
   const { penyakit } = useParams();
 
   useEffect(() => {
@@ -26,8 +27,18 @@ export const ProductProvider = ({ children }) => {
 
   const fallbackImage = 'https://d1vbn70lmn1nqe.cloudfront.net/prod/wp-content/uploads/2023/03/06082237/kucing-domestik.jpg'; // Replace with your fallback image URL
 
+  const addToCart = (product) => {
+    setCartItems((prevCartItems) => [...prevCartItems, product]);
+  };
+
+  const removeFromCart = (productId) => {
+    setCartItems((prevCartItems) =>
+      prevCartItems.filter((item) => item.id !== productId)
+    );
+  };
+
   return (
-    <ProductContext.Provider value={{ products, fallbackImage }}>
+    <ProductContext.Provider value={{ products, fallbackImage, addToCart, cartItems, removeFromCart }}>
       {children}
     </ProductContext.Provider>
   );

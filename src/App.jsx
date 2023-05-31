@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/home';
 import CariDokter from './pages/cariDokter';
 import Artikel from './pages/Artikel';
@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Header } from './components/Header';
 import ProductList from './components/ProductList';
 import { ProductProvider } from './context/ProductContext';
+import Cart from './components/cart';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/artikel" element={<Artikel />} />
           <Route path="/tokoobat" element={<Toko />} />
           <Route path="*" element={<h1>Not Found</h1>} />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
       </BrowserRouter>
     </ProductProvider>
