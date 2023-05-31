@@ -1,0 +1,26 @@
+.testimonial{
+    margin: 80px 120px;
+}
+
+.card-testimonial{
+    margin: 24px 0;
+}
+
+.card-text{
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    margin-top: 16px;
+}
+
+.bintang{
+    color: #FFC107;
+}
+
+.testimonial-title{
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #212529;
+}

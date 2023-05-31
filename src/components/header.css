@@ -1,0 +1,100 @@
+/* Navbar */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@600&display=swap");
+
+p {
+  margin: 0;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 16px 120px;
+  box-sizing: border-box;
+}
+
+.menubar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 32px;
+  height: fit-content;
+  box-sizing: border-box;
+}
+
+.logo {
+  gap: 8px;
+  width: 48px;
+  height: 100%;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 24px;
+  height: fit-content;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-weight: 500;
+  color: #78828A;
+}
+
+.nav-link:hover {
+  color: rgba(0, 163, 118, 1);
+  font-weight: 700;
+}
+
+.beranda {
+  color: rgba(0, 163, 118, 1);
+  font-size: 16px;
+  line-height: 140%;
+  font-family: Inter, sans-serif;
+  font-weight: 700;
+}
+
+.cari-dokter,
+.artikel,
+.toko-obat {
+  color: rgba(120, 130, 138, 1);
+  font-size: 16px;
+  line-height: 140%;
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 32px;
+  box-sizing: border-box;
+}
+
+.search-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.cart-icon {
+  width: 24px;
+  height: 24px;
+}
+
+
+.button-header{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 16px;
+  height: 100%;
+  box-sizing: border-box;
+}
