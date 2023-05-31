@@ -30,7 +30,11 @@ export const Header = () => {
         </div>
         <div className="icons">
           <HiSearch className="search-icon" />
-          <HiShoppingCart className="cart-icon" />
+          <HiShoppingCart className="cart-icon" 
+          onClick={() => {
+            window.location.href = "/cart";
+          }}
+          />
           <div className="button-header">
             <Button variant="outline-success">Daftar</Button>
             <Button variant="success">Masuk</Button>
