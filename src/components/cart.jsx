@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Breadcrumb from 'react-bootstrap/Breadcrumb';
 import { Link } from 'react-router-dom';
 import './cart.css';
@@ -8,9 +8,19 @@ import Button from 'react-bootstrap/Button';
 const Cart = () => {
   const { cartItems, fallbackImage, removeFromCart } = useContext(ProductContext);
   const [cart, setCart] = useState(cartItems);
+  const [address, setAddress] = useState('');
+  const [paymentMethod, setPaymentMethod] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+
+  useEffect(() => {
+    setCart(cartItems);
+  }, [cartItems]);
 
   const handleRemove = (productId) => {
     removeFromCart(productId);
+    const updatedCart = cart.filter((item) => item.id !== productId);
+    setCart(updatedCart);
   };
 
   const handleDecreaseQuantity = (productId) => {
@@ -41,6 +51,39 @@ const Cart = () => {
     return totalPrice;
   };
 
+  const handleAddressChange = (event) => {
+    setAddress(event.target.value);
+  };
+
+  const handlePaymentMethodChange = (event) => {
+    setPaymentMethod(event.target.value);
+  };
+
+  const handleFirstNameChange = (event) => {
+    setFirstName(event.target.value);
+  };
+
+  const handleLastNameChange = (event) => {
+    setLastName(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log('Nama Depan:', firstName);
+    console.log('Nama Belakang:', lastName);
+    console.log('Alamat:', address);
+    console.log('Metode Pembayaran:', paymentMethod);
+    setAddress('');
+    setPaymentMethod('');
+    setFirstName('');
+    setLastName('');
+  };
+
+  const handleCheckout = () => {
+    // Logika checkout di sini, Anda dapat mengirim data pembayaran ke API Midtrans atau penyedia payment gateway lainnya
+    console.log('Checkout:', cart, address, paymentMethod);
+  };
+
   return (
     <div>
       <div className="cart">
@@ -48,43 +91,116 @@ const Cart = () => {
           <Breadcrumb.Item>
             <Link to="/">Home</Link>
           </Breadcrumb.Item>
-          <Breadcrumb.Item active="active">Keranjang</Breadcrumb.Item>
+          <Breadcrumb.Item active>Keranjang</Breadcrumb.Item>
         </Breadcrumb>
-        <h1>Keranjang</h1>
-        <div className="cart-pembungkus">
-          {cart.length > 0 ? (
-            <>
-              {cart.map((product) => (
-                <div key={product.id} className="cart-item">
-                  <div className="cart-item-image">
-                    <img
-                      src={product.image || fallbackImage}
-                      alt="Gambar"
-                      className="product-image"
-                    />
-                  </div>
-                  <div className="cart-item-details">
-                    <h5 className="cart-item-title">{product.name}</h5>
-                    <p className="cart-item-price">Rp {product.price}</p>
-                    <div className="counter">
-                      <button onClick={() => handleDecreaseQuantity(product.id)}>-</button>
-                      <span>{product.quantity}</span>
-                      <button onClick={() => handleIncreaseQuantity(product.id)}>+</button>
-                    </div>
-                    <Button
-                      variant="outline-danger"
-                      onClick={() => handleRemove(product.id)}
-                    >
-                      Remove
-                    </Button>
-                  </div>
-                </div>
-              ))}
-              <div className="total-price">Total: Rp {getTotalPrice()}</div>
-            </>
-          ) : (
-            <p>Keranjang kosong</p>
-          )}
+        <div className="container-cart">
+          <div className="row">
+            <div className="col-sm-6">
+              <div className="cart-pembungkus">
+              <h1>Keranjang</h1>
+                {cart.length > 0 ? (
+                  <>
+                    {cart.map((item) => (
+                      <div key={item.id} className="cart-item">
+                        <div className="cart-item-image">
+                          <img
+                            src={item.image || fallbackImage}
+                            alt="Gambar"
+                            className="product-image"
+                          />
+                        </div>
+                        <div className="cart-item-details">
+                          <h5 className="cart-item-title">{item.name}</h5>
+                          <p className="cart-item-price">Rp {item.price}</p>
+                          <div className="counter">
+                            <button
+                              onClick={() => handleDecreaseQuantity(item.id)}
+                              disabled={item.quantity === 1}
+                            >
+                              -
+                            </button>
+                            <span>{item.quantity}</span>
+                            <button onClick={() => handleIncreaseQuantity(item.id)}>+</button>
+                          </div>
+                          <Button
+                            variant="outline-danger"
+                            onClick={() => handleRemove(item.id)}
+                          >
+                            Hapus
+                          </Button>
+                        </div>
+                      </div>
+                    ))}
+                  </>
+                ) : (
+                  <p>Keranjang kosong.</p>
+                )}
+              </div>
+            </div>
+            <div className="col-sm-6">
+              <div className="cart-summary">
+                <h4>Total Order</h4>
+                {cart.length > 0 ? (
+                  <>
+                    <p>Total Item: {cart.length}</p>
+                    <p>Total Harga: Rp {getTotalPrice()}</p>
+                    <form onSubmit={handleSubmit}>
+                      <div className="form-group">
+                        <label htmlFor="firstName">Nama Depan</label>
+                        <input
+                          type="text"
+                          className="form-control"
+                          id="firstName"
+                          value={firstName}
+                          onChange={handleFirstNameChange}
+                          required
+                        />
+                      </div>
+                      <div className="form-group">
+                        <label htmlFor="lastName">Nama Belakang</label>
+                        <input
+                          type="text"
+                          className="form-control"
+                          id="lastName"
+                          value={lastName}
+                          onChange={handleLastNameChange}
+                          required
+                        />
+                      </div>
+                      <div className="form-group">
+                        <label htmlFor="address">Alamat Pengiriman</label>
+                        <textarea
+                          className="form-control"
+                          id="address"
+                          rows="3"
+                          value={address}
+                          onChange={handleAddressChange}
+                          required
+                        ></textarea>
+                      </div>
+                      <div className="form-group">
+                        <label htmlFor="paymentMethod">Metode Pembayaran</label>
+                        <select
+                          className="form-control"
+                          id="paymentMethod"
+                          value={paymentMethod}
+                          onChange={handlePaymentMethodChange}
+                          required
+                        >
+                          <option value="">Pilih Metode Pembayaran</option>
+                          <option value="transfer">Transfer Bank</option>
+                          <option value="cod">COD</option>
+                        </select>
+                      </div>
+                      <Button variant="success" type="submit" className='btn-checkout' onClick={handleCheckout}>
+                        Checkout
+                      </Button>
+                    </form>
+                  </>
+                ) : null}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
