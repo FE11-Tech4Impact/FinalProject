@@ -25,7 +25,8 @@ export const ProductProvider = ({ children }) => {
     fetchData();
   }, [penyakit]);
 
-  const fallbackImage = 'https://d1vbn70lmn1nqe.cloudfront.net/prod/wp-content/uploads/2023/03/06082237/kucing-domestik.jpg'; // Replace with your fallback image URL
+  const fallbackImage =
+    'https://d1vbn70lmn1nqe.cloudfront.net/prod/wp-content/uploads/2023/03/06082237/kucing-domestik.jpg'; // Replace with your fallback image URL
 
   const addToCart = (product) => {
     setCartItems((prevCartItems) => [...prevCartItems, product]);
@@ -38,7 +39,9 @@ export const ProductProvider = ({ children }) => {
   };
 
   return (
-    <ProductContext.Provider value={{ products, fallbackImage, addToCart, cartItems, removeFromCart }}>
+    <ProductContext.Provider
+      value={{ products, fallbackImage, addToCart, cartItems, removeFromCart }}
+    >
       {children}
     </ProductContext.Provider>
   );
