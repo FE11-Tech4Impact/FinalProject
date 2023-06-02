@@ -1,9 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react';
 import Breadcrumb from 'react-bootstrap/Breadcrumb';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './cart.css';
 import { ProductContext } from '../context/ProductContext';
 import Button from 'react-bootstrap/Button';
+import { PayPalButton } from 'react-paypal-button-v2';
 
 const Cart = () => {
   const { cartItems, fallbackImage, removeFromCart } = useContext(ProductContext);
@@ -12,11 +13,19 @@ const Cart = () => {
   const [paymentMethod, setPaymentMethod] = useState('');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
+  const [totalItems, setTotalItems] = useState(0);
+  
+  const navigate = useNavigate();
 
   useEffect(() => {
     setCart(cartItems);
   }, [cartItems]);
-
+  
+  useEffect(() => {
+    const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+    setTotalItems(totalItems);
+  }, [cart]);
+  
   const handleRemove = (productId) => {
     removeFromCart(productId);
     const updatedCart = cart.filter((item) => item.id !== productId);
@@ -67,21 +76,33 @@ const Cart = () => {
     setLastName(event.target.value);
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log('Nama Depan:', firstName);
-    console.log('Nama Belakang:', lastName);
-    console.log('Alamat:', address);
-    console.log('Metode Pembayaran:', paymentMethod);
-    setAddress('');
-    setPaymentMethod('');
-    setFirstName('');
-    setLastName('');
-  };
-
   const handleCheckout = () => {
     // Logika checkout di sini, Anda dapat mengirim data pembayaran ke API Midtrans atau penyedia payment gateway lainnya
     console.log('Checkout:', cart, address, paymentMethod);
+    
+    // Reset keranjang menjadi kosong
+    setCart([]);
+    
+    // Redirect ke halaman sukses
+    navigate('/');
+  };
+  
+
+  const onSuccess = (details, data) => {
+    // Logika yang akan dijalankan setelah pembayaran berhasil
+    console.log('Pembayaran berhasil:', details, data);
+    // Lakukan tindakan yang sesuai, misalnya, mengirim data pembayaran ke server
+    handleCheckout();
+  };
+
+  const onCancel = (data) => {
+    // Logika yang akan dijalankan jika pembayaran dibatalkan
+    console.log('Pembayaran dibatalkan:', data);
+  };
+
+  const onError = (err) => {
+    // Logika yang akan dijalankan jika terjadi kesalahan
+    console.error('Terjadi kesalahan saat pembayaran:', err);
   };
 
   return (
@@ -97,7 +118,7 @@ const Cart = () => {
           <div className="row">
             <div className="col-sm-6">
               <div className="cart-pembungkus">
-              <h1>Keranjang</h1>
+                <h1>Keranjang</h1>
                 {cart.length > 0 ? (
                   <>
                     {cart.map((item) => (
@@ -111,7 +132,7 @@ const Cart = () => {
                         </div>
                         <div className="cart-item-details">
                           <h5 className="cart-item-title">{item.name}</h5>
-                          <p className="cart-item-price">Rp {item.price}</p>
+                          <p className="cart-item-price">$ {item.price}</p>
                           <div className="counter">
                             <button
                               onClick={() => handleDecreaseQuantity(item.id)}
@@ -142,9 +163,9 @@ const Cart = () => {
                 <h4>Total Order</h4>
                 {cart.length > 0 ? (
                   <>
-                    <p>Total Item: {cart.length}</p>
-                    <p>Total Harga: Rp {getTotalPrice()}</p>
-                    <form onSubmit={handleSubmit}>
+                    <p>Total Item: {totalItems}</p>
+                    <p>Total Harga: $ {getTotalPrice()}</p>
+                    <form onSubmit={handleCheckout}>
                       <div className="form-group">
                         <label htmlFor="firstName">Nama Depan</label>
                         <input
@@ -180,21 +201,17 @@ const Cart = () => {
                       </div>
                       <div className="form-group">
                         <label htmlFor="paymentMethod">Metode Pembayaran</label>
-                        <select
-                          className="form-control"
-                          id="paymentMethod"
-                          value={paymentMethod}
-                          onChange={handlePaymentMethodChange}
-                          required
-                        >
-                          <option value="">Pilih Metode Pembayaran</option>
-                          <option value="transfer">Transfer Bank</option>
-                          <option value="cod">COD</option>
-                        </select>
                       </div>
-                      <Button variant="success" type="submit" className='btn-checkout' onClick={handleCheckout}>
-                        Checkout
-                      </Button>
+                      <PayPalButton
+                        amount={getTotalPrice()} // Jumlah pembayaran yang akan ditentukan
+                        currency="USD" // Mata uang pembayaran
+                        onSuccess={onSuccess}
+                        onCancel={onCancel}
+                        onError={onError}
+                        options={{
+                          clientId: 'AZW_HIbX9o5c4fcxKEmvFqRqF6YRoedmZXM3UGQT287B_jFilCiFn19r6BOmlE3X4m8czW1l8X3urvW9',
+                        }}
+                      />
                     </form>
                   </>
                 ) : null}

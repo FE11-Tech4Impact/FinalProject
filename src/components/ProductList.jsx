@@ -51,7 +51,7 @@ const ProductList = () => {
                   className="product-image"
                 />
                 <h5 className="card-title">{product.name}</h5>
-                <p className="card-price">{product.price}</p>
+                <p className="card-price">${product.price}</p>
                 <Button
                   variant="outline-success"
                   className="btn-product"

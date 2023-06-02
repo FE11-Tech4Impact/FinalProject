@@ -24,3 +24,10 @@
 .custom-link {
     text-decoration: none;
   }
+
+  .cardSakit-title{
+    font-size: 32px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 8px;
+    }

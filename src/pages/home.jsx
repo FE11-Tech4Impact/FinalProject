@@ -30,7 +30,7 @@ const Home = () => {
     <div className="JenisSakit">
         <div className="row">
             <div className="col-sm-10">
-                <h3 className="cardSakit-title">Cari Dokter umum atau Spesialis</h3>
+                <h3 className="cardSakit-title">Cari Obat</h3>
             </div>
             <div className="col-sm-2 text-end">
                 <a href="/artikel" className="btn btn-success">
