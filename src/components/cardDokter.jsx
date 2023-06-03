@@ -1,62 +1,52 @@
-import React, { useState } from 'react';
-import dokter1 from '../assets/dokter/dokter1.png';
-import './CardDokter.css';
+import React, { useState, useEffect } from "react";
+import '../css/cardDokter.css';
+import { Link } from 'react-router-dom';
 
-const CardDokter = () => {
-  const [dokterData, setDokterData] = useState([
-    {
-      name: 'dr. John Doe',
-      specialization: 'Spesialis Anak',
-      price: 'Rp. 100.000',
-      image: dokter1,
-    },
-    {
-      name: 'dr. Jane Smith',
-      specialization: 'Spesialis Bedah',
-      price: 'Rp. 150.000',
-      image: dokter1,
-    },
-    {
-      name: 'dr. Michael Johnson',
-      specialization: 'Spesialis Kandungan',
-      price: 'Rp. 200.000',
-      image: dokter1,
-    },
-    {
-      name: 'dr. Sarah Davis',
-      specialization: 'Spesialis Gigi',
-      price: 'Rp. 120.000',
-      image: dokter1,
-    },
-  ]);
 
+const UserList = () => {
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    fetch("https://64527770a2860c9ed40d2a69.mockapi.io/doctor")
+      .then((response) => response.json())
+      .then((data) => setUsers(data))
+      .catch((error) => console.log(error));
+  }, []);
+  const displayedUsers = users.slice(0, 4);
+
+  
   return (
-    <div className="dokterRekomendasi">
-      <div className="row">
-        <div className="col-sm-12">
-          <h3 className="rekomendasi-title">Dokter Rekomendasi</h3>
-        </div>
+
+<div className="dokterRekomendasi">
+<div className="row">
+          <div className="col-sm-10">
+            <h3 className="artikel-title">Dokter Rekomendasi</h3>
+          </div>
+          <div className="col-sm-2 text-end">
+            <a href="/cari-dokter" className="btn btn-success">
+              Lihat Semuanya
+            </a>
+          </div>
       </div>
-      <div className="row">
-        {dokterData.map((dokter, index) => (
+      <div className="row dokter-daftar">
+        {displayedUsers.map((user, index) => (
           <div key={index} className="col-sm-3">
             <div className="card border-0">
               <div className="card-body">
                 <div className="row">
-                  <div className="col-sm-12">
+                  <div className="comp-1 col-sm-12">
                     <img
-                      src={dokter.image}
+                      src={user.avatar}
                       alt="Gambar"
                       className="dokter-image"
                     />
                   </div>
-                  <div className="col-sm-12">
-                    <h5 className="card-title">{dokter.name}</h5>
-                    <p className="card-text">{dokter.specialization}</p>
-                    <p className="card-price">{dokter.price}</p>
-                    <a href="/cariDokter" className="btn btn-success">
-                      Cari Dokter
-                    </a>
+                  <div className="comp-2 col-sm-12">
+                    <h5 className="card-title">dr. {user.name.substring(0, 12)}</h5>
+                    <p className="card-text">{user.job}</p>
+                    <div className="card-price">Mulai Dari <span>Rp. {user.price.toLocaleString('id-ID')}</span></div>
+                    <Link  className="btn btn-success" to={`/profil-dokter/${user.id}`}>Mulai Konsultasi</Link>
+
                   </div>
                 </div>
               </div>
@@ -65,7 +55,9 @@ const CardDokter = () => {
         ))}
       </div>
     </div>
+
+    
   );
 };
 
-export default CardDokter;
+export default UserList;
