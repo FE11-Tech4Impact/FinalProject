@@ -6,6 +6,7 @@ import Artikel from '../components/artikel';
 import CardJenisSakit from '../components/cardJenisSakit';
 import Footer from '../components/Footer';
 import BannerDaftar from '../components/BannerDaftar';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
     return (
@@ -17,9 +18,9 @@ const Home = () => {
                     <div className="card-body">
                         <h5 className="banner-title">Dapatkan Konsultasi Kesehatan</h5>
                         <p className="banner-text">Dengan mudah, cepat, dan aman</p>
-                        <a href="/cari-dokter" className="ban-btn btn btn-success">
+                        <Link to="/cari-dokter" className="ban-btn btn btn-success">
                             Cari Dokter
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>
