@@ -1,0 +1,32 @@
+.artikel{
+    margin: 80px 120px;
+}
+
+.artikel-title{
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #121212;
+}
+
+.card-body img{
+    border-radius: 12px;
+    margin-bottom: 16px;
+}
+
+.artikel .card-testimonial{
+    margin: 24px 0;
+}
+.artikel .card-text{
+    height: 7rem;
+    overflow-y: hidden;
+    font-size: 16px;
+    color: #78828A;
+    margin-bottom: 0;
+}
+
+.artikel .card-title{
+    height: 5rem;
+}
+
+
