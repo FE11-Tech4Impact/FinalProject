@@ -3,8 +3,7 @@ import { Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { HiShoppingCart, HiSearch, HiChevronDown } from "react-icons/hi";
 import React, { useState, useContext, useRef, useEffect } from "react";
-import '../css/Header.css';
-import { AuthContext } from '../context/AuthContext';
+import '../css/header.css';
 import Logo from '../assets/logo.png';
 import '../globalstyle.css';
 
