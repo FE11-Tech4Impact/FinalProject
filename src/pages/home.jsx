@@ -17,7 +17,7 @@ const Home = () => {
                     <div className="card-body">
                         <h5 className="banner-title">Dapatkan Konsultasi Kesehatan</h5>
                         <p className="banner-text">Dengan mudah, cepat, dan aman</p>
-                        <a href="/cariDokter" className="ban-btn btn btn-success">
+                        <a href="/cari-dokter" className="ban-btn btn btn-success">
                             Cari Dokter
                         </a>
                     </div>
