@@ -38,7 +38,7 @@ const Testimonial = () => {
             {testimonials.map((testimonial, index) => (
               <div className="col-sm-4" key={index}>
                 <div className="card border-0">
-                  <div className="card-body">
+                  <div className="card-body bodi">
                     <div className="bintang">
                       {[...Array(testimonial.stars)].map((_, starIndex) => (
                         <FaStar key={starIndex} />

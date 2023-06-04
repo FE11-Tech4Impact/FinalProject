@@ -4,6 +4,9 @@ import Testimonial from '../components/testimonial';
 import CardDokter from '../components/cardDokter';
 import Artikel from '../components/artikel';
 import CardJenisSakit from '../components/cardJenisSakit';
+import Footer from '../components/Footer';
+import BannerDaftar from '../components/BannerDaftar';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
     return (
@@ -15,9 +18,9 @@ const Home = () => {
                     <div className="card-body">
                         <h5 className="banner-title">Dapatkan Konsultasi Kesehatan</h5>
                         <p className="banner-text">Dengan mudah, cepat, dan aman</p>
-                        <a href="/cariDokter" className="btn btn-success">
+                        <Link to="/cari-dokter" className="ban-btn btn btn-success">
                             Cari Dokter
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>
@@ -31,10 +34,12 @@ const Home = () => {
         <div className="row">
             <div className="col-sm-10">
                 <h3 className="cardSakit-title">Cari Obat</h3>
+
+                <h3 className="rekomendasi-title">Cari Dokter umum atau Spesialis</h3>
             </div>
             <div className="col-sm-2 text-end">
                 <a href="/artikel" className="btn btn-success">
-                    Lihat Semuanya
+                    Lihat Semuanya 
                 </a>
             </div>
             <CardJenisSakit/>
@@ -44,6 +49,8 @@ const Home = () => {
     <CardDokter/>
     <Testimonial/>
     <Artikel/>
+    <BannerDaftar />
+    <Footer/>
 
 </>
     );

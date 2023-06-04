@@ -12,6 +12,15 @@
   }
   
   .rekomendasi-title {
+    height: 100%;
+    background-size: cover;
+    border-radius: 16px;
+  }
+  
+  .rekomendasi-title {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
     margin-bottom: 20px;
   }
   
@@ -50,4 +59,59 @@
     font-weight: 700;
     color: #000;
     margin-bottom: 8px;
+
+
+  .comp-2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 10rem;
+    gap: 8px;
+
+  }
+
+  .comp-2 .card-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #000;
+    margin: 0;
+    margin-bottom: 8px;
+  }
+
+  .comp-2 .card-text {
+    font-size: 16px;
+    margin: 0;
+    font-weight: 400;
+    color: #000;
+  }
+
+  .comp-2 .card-price {
+    font-size: 16px;
+    margin: 0;
+    font-weight: 400;
+    color: #000;
+  }
+
+  .comp-2 span{
+    font-size: 18px;
+    margin: 0;
+    font-weight: 700;
+    color: #F58736;
+  }
+
+
+  .comp-1{
+    width: 350px;
+    height: 250px;
+    padding: 0;
+  }
+
+
+
+  .dokter-daftar{
+    border-radius: 12px;
+    padding-top: 1.1rem;
+    background: url('https://lh3.googleusercontent.com/pw/AMWts8CjhmcbQCxQH-RrDzcWI93V4MI9U-QIB4WCbUUzx1o_j0RM4RErYLHR7DeEtZLGt6dxVflk5VzgN5pCSI5APLuV8aGhKPvOaLDYIANqbRVZv90QqwxmIk2Ia7kRjbw5ctOO-jcLvR9swM5muOliVSFu=w837-h568-s-no?authuser=0');
+    background-size: cover;
   }

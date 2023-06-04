@@ -23,6 +23,19 @@
     color: #fff;
 }
 
+
+.banner .btn-success{
+    margin-top: 16px;
+    background-color: #fff;
+    color: rgb(27, 190, 117);
+    border: 1px solid rgb(27, 190, 117);
+}
+
+.ban-btn{
+    background-color: #fff;
+    color: rgb(27, 190, 117);
+    border: 1px solid rgb(27, 190, 117);
+}
 .cariDokter{
     margin: 80px 120px;
 }
@@ -37,10 +50,17 @@
     color: #000;
 }
 
+/* .cariDokter-title{
+    font-size: 30px;
+    font-weight: 700;
+    color: #000;
+} */
+
 
 .dokterRekomendasi{
     margin: 0 120px;
 }
+} 
 
 .card-dokter{
     /* display: flex; */
