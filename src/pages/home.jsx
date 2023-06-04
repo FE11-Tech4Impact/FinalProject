@@ -1,4 +1,4 @@
-import '../components/home.css';
+import '../css/home.css';
 import ImageCover from '../assets/dokter-cover.png';
 import Testimonial from '../components/testimonial';
 import CardDokter from '../components/cardDokter';

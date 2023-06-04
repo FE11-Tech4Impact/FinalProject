@@ -4,7 +4,7 @@ import { ProductContext } from '../context/ProductContext';
 import { Button } from 'react-bootstrap';
 import { HiShoppingCart, HiSearch } from 'react-icons/hi';
 
-import './Header.css';
+import '../css/Header.css';
 import Logo from '../assets/logo.png';
 import '../globalstyle.css';
 

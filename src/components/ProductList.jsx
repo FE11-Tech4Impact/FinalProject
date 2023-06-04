@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { ProductContext } from '../context/ProductContext';
 import Button from 'react-bootstrap/Button';
 
-import './productlist.css';
+import '../css/productlist.css';
 
 const ProductList = () => {
   const { products, fallbackImage, addToCart } = useContext(ProductContext);

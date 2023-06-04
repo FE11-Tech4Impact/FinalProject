@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import Breadcrumb from 'react-bootstrap/Breadcrumb';
 import { Link, useNavigate } from 'react-router-dom';
-import './cart.css';
+import '../css/cart.css';
 import { ProductContext } from '../context/ProductContext';
 import Button from 'react-bootstrap/Button';
 import { PayPalButton } from 'react-paypal-button-v2';

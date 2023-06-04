@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Breadcrumb from 'react-bootstrap/Breadcrumb';
-import '../components/toko.css';
+import '../css/toko.css';
 import CardJenisSakit from '../components/cardJenisSakit';
 
 const Toko = () => {

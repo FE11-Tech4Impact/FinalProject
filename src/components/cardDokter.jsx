@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import dokter1 from '../assets/dokter/dokter1.png';
-import './CardDokter.css';
+import '../css/CardDokter.css';
 
 const CardDokter = () => {
   const [dokterData, setDokterData] = useState([

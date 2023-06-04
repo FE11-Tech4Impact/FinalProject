@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FaStar } from 'react-icons/fa';
-import './testimonial.css';
+import '../css/testimonial.css';
 
 const Testimonial = () => {
   const [testimonials, setTestimonials] = useState([

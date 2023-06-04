@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './cardsakit.css';
+import '../css/cardsakit.css';
 import Anak from '../assets/penyakit/anak.png';
 import Umum from '../assets/penyakit/Umum.png';
 import Jantung from '../assets/penyakit/Jantung.png';
