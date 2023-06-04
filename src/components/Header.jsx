@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import { ProductContext } from '../context/ProductContext';
 import { Button } from 'react-bootstrap';
 import { HiShoppingCart, HiSearch } from 'react-icons/hi';
-import '../css/Header.css';
+import '../css/header.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useState, useContext, useRef, useEffect } from "react";
 import Logo from '../assets/logo.png';
