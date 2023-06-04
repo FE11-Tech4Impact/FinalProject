@@ -25,7 +25,7 @@ const UserList = () => {
           </div>
           <div className="col-sm-2 text-end">
             <a href="/cari-dokter" className="btn btn-success">
-              Lihat Semuanya
+              Lihat selengkapnya
             </a>
           </div>
       </div>
