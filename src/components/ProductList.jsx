@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { ProductContext } from '../context/ProductContext';
-import './productlist.css';
+import '../css/productlist.css';
 
 const ProductList = () => {
   const { products, fallbackImage } = useContext(ProductContext);
