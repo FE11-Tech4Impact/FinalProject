@@ -34,11 +34,9 @@ const Home = () => {
         <div className="row">
             <div className="col-sm-10">
                 <h3 className="cardSakit-title">Cari Obat</h3>
-
-                <h3 className="rekomendasi-title">Cari Dokter umum atau Spesialis</h3>
             </div>
             <div className="col-sm-2 text-end">
-                <a href="/artikel" className="btn btn-success">
+                <a href="/tokoObat" className="btn btn-success">
                     Lihat Semuanya 
                 </a>
             </div>
