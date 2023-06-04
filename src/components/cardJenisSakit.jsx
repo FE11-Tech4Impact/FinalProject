@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import '../css/cardsakit.css';
 import Anak from '../assets/penyakit/Anak.png';
 import Umum from '../assets/penyakit/umum.png';
-import Jantung from '../assets/penyakit/jantung.png';
+import Jantung from '../assets/penyakit/Jantung.png';
 import Jiwa from '../assets/penyakit/jiwa.png';
 import Kandungan from '../assets/penyakit/Kandungan.png';
 import Mata from '../assets/penyakit/Mata.png';
