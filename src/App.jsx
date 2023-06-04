@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/home';
 import CariDokter from './pages/cariDokter';
 import Artikel from './pages/Artikel';
@@ -9,10 +9,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Header } from './components/Header';
 import ProductList from './components/ProductList';
 import { ProductProvider } from './context/ProductContext';
+import Cart from './components/cart';
 import { UserProvider } from './context/UserContext';
 import { OrderProvider } from './context/OrderContext';
 import DokterDetail from './pages/ProfilDokter';
 import OrderDokter  from './components/Order-Dokter';
+
 
 function App() {
   return (
@@ -31,6 +33,7 @@ function App() {
           <Route path="/profil-dokter/:id" element={<DokterDetail />} />
           <Route path="/order-dokter/:id" element={<OrderDokter />} />
           <Route path="*" element={<h1>Not Found</h1>} />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
         </OrderProvider>
         </UserProvider>

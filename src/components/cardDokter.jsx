@@ -1,3 +1,6 @@
+import React, { useState } from 'react';
+import dokter1 from '../assets/dokter/dokter1.png';
+import '../css/CardDokter.css';
 import React, { useState, useEffect } from "react";
 import '../css/carddokter.css';
 import { Link } from 'react-router-dom';

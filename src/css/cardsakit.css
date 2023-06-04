@@ -1,3 +1,14 @@
+
+.JenisSakit {
+    margin: 80px 120px;
+}
+
+.card-jenissakit {
+    margin-top: 24px;
+}
+
+.card-sakit {
+
 .JenisSakit{
     margin: 80px 120px;
 }
@@ -16,6 +27,10 @@
 }
 
 
+
+.card-title {
+    font-size: 20px;
+    font-weight: 600;
 .card-title{
     font-size: 20px;
     font-weight: 600;
@@ -24,4 +39,14 @@
 
 .custom-link {
     text-decoration: none;
+}
+
+.cardSakit-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 8px;
+}
+
+
   }

@@ -1,14 +1,19 @@
+import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
+import { ProductContext } from '../context/ProductContext';
 import { Button } from 'react-bootstrap';
+import { HiShoppingCart, HiSearch } from 'react-icons/hi';
+import '../css/Header.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { HiShoppingCart, HiSearch, HiChevronDown } from "react-icons/hi";
 import React, { useState, useContext, useRef, useEffect } from "react";
-import '../css/header.css';
 import Logo from '../assets/logo.png';
 import '../globalstyle.css';
 
 
 export const Header = () => {
+  const { cartItems } = useContext(ProductContext);
+
   const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
   const [isOpen, setIsOpen] = useState(false);
   const [clickCount, setClickCount] = useState(0);
@@ -70,7 +75,10 @@ export const Header = () => {
         </div>
         <div className="icons">
           <HiSearch className="search-icon" />
-          <HiShoppingCart className="cart-icon" />
+          <NavLink to="/cart" className="cart-icon">
+            <HiShoppingCart />
+            <span className="cart-item-count">{cartItems.length}</span>
+          </NavLink>
           <div className="button-header">
             {!loggedInUser ?(
               <>
