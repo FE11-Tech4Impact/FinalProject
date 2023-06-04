@@ -20,9 +20,9 @@ const UserList = () => {
   return (
 
 <div className="dokterRekomendasi">
-<div className="row">
+<div className="row dokter">
           <div className="col-sm-10">
-            <h3 className="artikel-title">Dokter Rekomendasi</h3>
+            <h3 className="rekomendasi-title">Dokter Rekomendasi</h3>
           </div>
           <div className="col-sm-2 text-end">
             <a href="/cari-dokter" className="btn btn-success">

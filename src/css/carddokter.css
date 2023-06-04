@@ -2,6 +2,10 @@
   margin: 80px 120px;
 }
 
+.dokter{
+  margin-bottom: 16px;
+}
+
 
 .dokter-image {
     width: 100%;
@@ -15,14 +19,11 @@
     height: 100%;
     background-size: cover;
     border-radius: 16px;
-  }
-  
-  .rekomendasi-title {
     font-size: 30px;
     font-weight: bold;
     margin-bottom: 20px;
-    margin-bottom: 20px;
   }
+  
   
   .card {
     margin-bottom: 20px;
@@ -101,14 +102,11 @@
     color: #F58736;
   }
 
-
   .comp-1{
     width: 350px;
     height: 250px;
     padding: 0;
   }
-
-
 
   .dokter-daftar{
     border-radius: 12px;
