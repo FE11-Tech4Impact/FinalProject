@@ -25,7 +25,7 @@ const UserList = () => {
           </div>
           <div className="col-sm-2 text-end">
             <a href="/cari-dokter" className="btn btn-success">
-              Lihat Semuanya
+              Lihat selengkapnya
             </a>
           </div>
       </div>
@@ -45,7 +45,7 @@ const UserList = () => {
                   <div className="comp-2 col-sm-12">
                     <h5 className="card-title">dr. {user.name.substring(0, 12)}</h5>
                     <p className="card-text">{user.job}</p>
-                    <div className="card-price">Mulai Dari <span>Rp. {user.price.toLocaleString('id-ID')}</span></div>
+                    <div className="card-price">Mulai Dari <span>$. {user.price.toLocaleString('us-USD')}</span></div>
                     <Link  className="btn btn-success" to={`/profil-dokter/${user.id}`}>Mulai Konsultasi</Link>
 
                   </div>

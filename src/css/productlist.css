@@ -28,7 +28,7 @@
 
 .dokter-image {
   width: 100%;
-  height: auto;
+  height: 100%;
   margin-bottom: 10px;
 }
 
@@ -85,8 +85,6 @@
   }
 }
 
-    margin: 80px 120px;
-  }
   
   .rekomendasi-title {
     font-size: 30px;
@@ -114,7 +112,7 @@
   
   .dokter-image {
     width: 100%;
-    height: auto;
+    height: 100%;
     margin-bottom: 10px;
   }
   

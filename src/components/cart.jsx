@@ -199,10 +199,8 @@ const Cart = () => {
                             required
                           ></textarea>
                         </div>
-                        <div className="form-group">
-                          <label htmlFor="paymentMethod">Metode Pembayaran</label>
-                        </div>
-                        <PayPalButtons
+                        <div className="paypalbutton">
+                          <PayPalButtons
                           style={{ layout: 'horizontal' }}
                           createOrder={(data, actions) => {
                             return actions.order.create({
@@ -224,6 +222,8 @@ const Cart = () => {
                           onCancel={onCancel}
                           onError={onError}
                         />
+                        </div>
+                        
                       </form>
                     </>
                   ) : null}

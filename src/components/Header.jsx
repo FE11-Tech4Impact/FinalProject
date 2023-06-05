@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import { ProductContext } from '../context/ProductContext';
 import { Button } from 'react-bootstrap';
-import { HiShoppingCart, HiSearch } from 'react-icons/hi';
+import { HiShoppingCart, HiSearch, HiChevronDown } from 'react-icons/hi';
 import '../css/header.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useState, useContext, useRef, useEffect } from "react";
@@ -91,11 +91,11 @@ export const Header = () => {
                 {loggedInUser.username.toString().charAt(0).toUpperCase()}
               </div>
               <h6 className="navbar-info-title">{loggedInUser.username.toString().charAt(0).toUpperCase() + loggedInUser.username.toString().slice(1)}</h6>
-              <div class="dropdown" ref={ref}>
+              <div className="dropdown" ref={ref}>
 
                <button onClick={toggleMenu}><HiChevronDown className='dropdown-button' /></button>
                {isOpen && (
-                <div class="dropdown-content">
+                <div className="dropdown-content">
                   <a href="#" className='dropdown-item'>Profil</a>
                   <a href="#" className='dropdown-item'>Pengaturan</a>
                   <button onClick={exit} className='dropdown-item'>Keluar</button>

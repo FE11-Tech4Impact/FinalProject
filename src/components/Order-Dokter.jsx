@@ -9,7 +9,7 @@ import "../css/OrderPage.css";
 import Dana from '../dana.png';
 import Bri from '../bri.png';
 import Shopee from '../shopee.png';
-
+import { useNavigate } from "react-router-dom";
 
 import { Icon } from "@iconify/react";
 
@@ -23,6 +23,8 @@ const OrderDokter = () => {
   const [promoCode, setPromoCode] = useState('');
   const [totalPrice, setTotalPrice] = useState(0);
   const [priceDiscount, setPriceDiscount] = useState(0);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchUserDetail = async () => {
@@ -72,17 +74,13 @@ const OrderDokter = () => {
   };
 
   const handleSubmit = (event) => {
-    console.log(category);
-
     event.preventDefault();
     updatePrice(totalPrice);
-    console.log(totalPrice);
     updateSelectedPay(category);
-    console.log(category);
-
-    setName("");
-    setCategory("");
+  
+    navigate('/cart');
   };
+  
 
 
   return (
@@ -134,26 +132,6 @@ const OrderDokter = () => {
               placeholder="Masukkan Kode Promo 40%"
               onChange={handlePromoCodeChange}
             />
-          </div>
-          <div className="form-order">
-            <label>Metode Pembayaran</label>
-            <select
-              value={category}
-              onChange={handlePay}
-            >
-              <option value="">Pilih Metode Pembayaran</option>
-              <option value="BRI">
-              <img src={Bri} alt="Gambar" className="pay-image" />
-                BANK BRI</option>
-              <option value="DANA">
-              <img src={Dana} alt="Gambar" className="pay-image" />
-                
-                DANA</option>
-              <option value="ShopeePay">
-              <img src={Shopee} alt="Gambar" className="pay-image" />
-                
-                SHOPEEPAY</option>
-            </select>
           </div>
         </form>
       </div>
