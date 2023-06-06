@@ -1,8 +1,4 @@
-import { NavLink } from 'react-router-dom';
-import { Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { HiShoppingCart, HiSearch } from "react-icons/hi";
-
 import '../css/footer.css';
 import Logo from '../assets/logo.png';
 import '../globalstyle.css';

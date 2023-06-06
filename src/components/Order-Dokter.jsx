@@ -6,11 +6,7 @@ import { OrderContext } from "../context/OrderContext";
 import "../css/dokter.css";
 import "../css/detailDokter.css";
 import "../css/OrderPage.css";
-import Dana from '../dana.png';
-import Bri from '../bri.png';
-import Shopee from '../shopee.png';
 import { useNavigate } from "react-router-dom";
-
 import { Icon } from "@iconify/react";
 
 const OrderDokter = () => {
@@ -78,7 +74,7 @@ const OrderDokter = () => {
     updatePrice(totalPrice);
     updateSelectedPay(category);
   
-    navigate('/cart');
+    navigate('/sukses-order-dokter');
   };
   
 

@@ -14,6 +14,7 @@ import { UserProvider } from './context/UserContext';
 import { OrderProvider } from './context/OrderContext';
 import DokterDetail from './pages/ProfilDokter';
 import OrderDokter  from './components/Order-Dokter';
+import SuksesDokter from './components/SuksesDokter';
 
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
           <Route path="/order-dokter/:id" element={<OrderDokter />} />
           <Route path="*" element={<h1>Not Found</h1>} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/sukses-order-dokter" element={<SuksesDokter />} />
         </Routes>
         </OrderProvider>
         </UserProvider>
