@@ -21,6 +21,7 @@
     "react-icons": "^4.9.0",
     "react-router-dom": "^6.11.2",
     "react-search-box": "^3.0.0",
+    "socket.io-client": "^4.6.2",
     "xendit-js-node": "^1.1.2"
   },
   "devDependencies": {
