@@ -4,26 +4,41 @@ import Home from './pages/home';
 import CariDokter from './pages/cariDokter';
 import Artikel from './pages/Artikel';
 import Toko from './pages/toko';
+import Login from './pages/Login';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Header } from './components/Header';
 import ProductList from './components/ProductList';
 import { ProductProvider } from './context/ProductContext';
+<<<<<<< HEAD
 import LoginPage from './components/LoginPage';
 import RegisterPage from './components/RegisterPage';
+=======
+import { UserProvider } from './context/UserContext';
+import { OrderProvider } from './context/OrderContext';
+import DokterDetail from './pages/ProfilDokter';
+import OrderDokter  from './components/Order-Dokter';
+>>>>>>> 35dfcf1f53d0625f0e2c34eb8dd9bce661bfe75e
 
 function App() {
   return (
     <ProductProvider>
       <BrowserRouter>
+      <UserProvider>
+      <OrderProvider>
         <Header />
         <Routes>
           <Route path="/:penyakit" element={<ProductList />} />
           <Route path="/" element={<Home />} />
-          <Route path="/cariDokter" element={<CariDokter />} />
+          <Route path="/cari-dokter" element={<CariDokter />} />
           <Route path="/artikel" element={<Artikel />} />
           <Route path="/tokoobat" element={<Toko />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/profil-dokter/:id" element={<DokterDetail />} />
+          <Route path="/order-dokter/:id" element={<OrderDokter />} />
           <Route path="*" element={<h1>Not Found</h1>} />
         </Routes>
+        </OrderProvider>
+        </UserProvider>
       </BrowserRouter>
     </ProductProvider>
   );
