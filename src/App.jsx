@@ -8,6 +8,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Header } from './components/Header';
 import ProductList from './components/ProductList';
 import { ProductProvider } from './context/ProductContext';
+import LoginPage from './components/LoginPage';
+import RegisterPage from './components/RegisterPage';
 
 function App() {
   return (

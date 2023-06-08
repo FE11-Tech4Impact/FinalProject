@@ -98,3 +98,46 @@ p {
   height: 100%;
   box-sizing: border-box;
 }
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 16px 12px; 
+  }
+
+  .menubar {
+    justify-content: space-between;
+    gap: 12px; 
+  }
+
+  .logo {
+    gap: 4px; 
+    width: 28px; 
+  }
+
+  .menu {
+    display: flex; 
+  }
+
+  .beranda,
+  .cari-dokter,
+  .artikel,
+  .toko-obat {
+    font-size: 12px; 
+    font-weight: 400; 
+  }
+
+  .icons {
+    justify-content: flex-start; 
+  }
+
+  .search-icon,
+  .cart-icon {
+    width: 16px; 
+    height: 16px; 
+  }
+
+  .button-header {
+    display: flex; 
+  }
+}
