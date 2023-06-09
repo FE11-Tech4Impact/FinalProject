@@ -15,7 +15,7 @@ import { OrderProvider } from './context/OrderContext';
 import DokterDetail from './pages/ProfilDokter';
 import OrderDokter  from './components/Order-Dokter';
 import SuksesDokter from './components/SuksesDokter';
-import Chat from './components/Chat';
+import ChatContainer from './components/ChatContainer';``
 
 
 function App() {
@@ -37,7 +37,8 @@ function App() {
           <Route path="*" element={<h1>Not Found</h1>} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/sukses-order-dokter" element={<SuksesDokter />} />
-          <Route path="/chat-dokter" element={<Chat /> } />
+          <Route path="/chat" element={<ChatContainer />} />
+
         </Routes>
         </OrderProvider>
         </UserProvider>

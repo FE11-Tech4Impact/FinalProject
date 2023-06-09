@@ -10,7 +10,7 @@ export const SuksesDokter = () => {
         <img src={sukses} alt="" className="image-sukses" />
         <h2>Selamat Pembayaran anda telah Terverifikasi</h2>
         <h5>Anda akan di arahkan langsung ke halaman konsultasi</h5>
-        <Button variant="primary" href="/chat-dokter">
+        <Button variant="primary" href="/chat">
           Konsultasi
         </Button>
       </div>

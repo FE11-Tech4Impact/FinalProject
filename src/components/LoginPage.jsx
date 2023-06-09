@@ -21,7 +21,7 @@ const LoginPage = () => {
     event.preventDefault();
     try {
       const response = await fetch(
-        "https://64527770a2860c9ed40d2a69.mockapi.io/user",
+        "https://6454643dc18adbbdfeb53cd7.mockapi.io/api/fe-11/user",
         {
           method: "POST",
           headers: {
@@ -38,7 +38,7 @@ const LoginPage = () => {
         window.location.href = "/";
         console.log("Login berhasil");
       } else {
-        alert("Salah Kontol");
+        alert("Login tidak berhasil");
         // Login gagal
         // Lakukan penanganan login gagal
         setError("Username atau password salah");

@@ -1,0 +1,17 @@
+.chatbox-sender {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin: 0 120px;
+    margin-top: 10px;
+    padding-right: 10px;;
+}
+
+.pesan{
+    padding: 10px;
+    background-color: #00A376;
+    border-radius: 10px;
+    max-width: 100%;
+    color: white;
+    font-size: 16pxem;
+}
