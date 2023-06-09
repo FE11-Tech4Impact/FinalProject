@@ -17,8 +17,6 @@ export const AuthProvider = ({ children }) => {
     setIsAuthenticated(false);
   };
 
- 
-
 
 
 

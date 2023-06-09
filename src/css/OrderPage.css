@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@400;500;600;700;800&display=swap');
+
+
 .page-detail-order{
-  margin: 50px 290px;
+  margin: 50px 550px;
   border: 1px solid rgb(196, 196, 196);
   border-radius: 12px;
   height: auto;
@@ -32,24 +35,19 @@
   padding-top: 1rem;
   padding-bottom: 1rem;
   border-radius: 12px;
-  border: 1px solid rgb(196, 196, 196);
 }
 
 .order-detail {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   flex-direction: column;
-  margin: 1rem 0;
-  padding: 1rem;
+  /* padding: 1rem; */
 }
 
 .order-detail form {
-  border: 1px solid rgb(196, 196, 196);
   border-radius: 12px;
   padding: 1rem;
   display: flex;
-  width: 46.9rem;
   flex-direction: column;
 }
 
@@ -101,15 +99,12 @@
 }
 
 
-
-
 .total-order {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     flex-direction: column;
     margin: 0;
-    margin-top:3rem ;
     padding: 1rem;
   }
 

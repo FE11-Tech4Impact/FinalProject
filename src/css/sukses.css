@@ -1,0 +1,20 @@
+.suksesorder {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-left: 100px;
+    margin-right: 100px;
+    padding: 50px;
+    align-items: center;
+    text-align: center;
+}
+
+.suksesorder h5 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #00A376;
+}
+
+.image-sukses {
+    width: 500px;
+    height: 500px;
+}
