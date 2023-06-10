@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../css/artikel.css';
+import './artikel.css';
 
 const Artikel = () => {
   const [articles, setArticles] = useState([]);
@@ -39,7 +39,7 @@ const Artikel = () => {
                     <h5 className="card-title">{article.title}</h5>
                     <p className="card-text">{article.text}</p>
                     <a href={article.link} className="btn btn-success">
-                      Baca Selengkapnya
+                      Lihat semuanya
                     </a>
                   </div>
                 </div>
