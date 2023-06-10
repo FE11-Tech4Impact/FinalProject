@@ -1,4 +1,4 @@
-import './artikelList.css'
+import '../css/artikelList.css'
 import React, { useState, useEffect } from 'react';
 // import DetailArtikel from './detailArtikel';
 
