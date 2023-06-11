@@ -15,8 +15,10 @@ import { OrderProvider } from './context/OrderContext';
 import DokterDetail from './pages/ProfilDokter';
 import OrderDokter  from './components/Order-Dokter';
 import SuksesDokter from './components/SuksesDokter';
-import ChatContainer from './components/ChatContainer';import OrderSukses from './components/OrderSukses';
-``
+import ChatContainer from './components/ChatContainer';
+import OrderSukses from './components/OrderSukses';
+import Register from './pages/Register';
+
 
 
 function App() {
@@ -33,6 +35,7 @@ function App() {
           <Route path="/artikel" element={<Artikel />} />
           <Route path="/tokoobat" element={<Toko />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
           <Route path="/profil-dokter/:id" element={<DokterDetail />} />
           <Route path="/order-dokter/:id" element={<OrderDokter />} />
           <Route path="*" element={<h1>Not Found</h1>} />
