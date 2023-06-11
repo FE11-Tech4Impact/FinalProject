@@ -1,21 +1,21 @@
 import React, { useEffect } from 'react';
 import { Button } from 'react-bootstrap';
 import sukses from '../assets/sukses.png';
-import { useHistory } from 'react-router-dom';
 import '../css/sukses.css';
+import { useNavigate } from 'react-router-dom';
 
 const OrderSukses = () => {
-  const history = useHistory();
+    const navigate = useNavigate();
 
   useEffect(() => {
     const redirectTimeout = setTimeout(() => {
-      history.push('/');
+    navigate('/');
     }, 5000);
 
     return () => {
       clearTimeout(redirectTimeout);
     };
-  }, [history]);
+  }, [navigate]);
 
   return (
     <div>
@@ -23,7 +23,7 @@ const OrderSukses = () => {
         <img src={sukses} alt="" className="image-sukses" />
         <h2>Selamat Pembayaran Anda Telah Terverifikasi</h2>
         <h5>Anda akan dialihkan ke halaman utama dalam beberapa detik...</h5>
-        <Button variant="primary" onClick={() => history.push('/')}>
+        <Button variant="primary" onClick={() => navigate('/')}>
           Kembali ke Halaman Utama
         </Button>
       </div>
