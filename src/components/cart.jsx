@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import '../css/cart.css';
 import { ProductContext } from '../context/ProductContext';
 import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 
 const Cart = () => {
   const { cartItems, fallbackImage, removeFromCart } = useContext(ProductContext);
@@ -13,6 +14,10 @@ const Cart = () => {
   const [paymentMethod, setPaymentMethod] = useState('');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [city, setCity] = useState('');
+  const [postalCode, setPostalCode] = useState('');
   const [totalItems, setTotalItems] = useState(0);
 
   const navigate = useNavigate();
@@ -76,32 +81,54 @@ const Cart = () => {
     setLastName(event.target.value);
   };
 
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
+
+  const handlePhoneChange = (event) => {
+    setPhone(event.target.value);
+  };
+
+  const handleCityChange = (event) => {
+    setCity(event.target.value);
+  };
+
+  const handlePostalCodeChange = (event) => {
+    setPostalCode(event.target.value);
+  };
+
   const handleCheckout = () => {
-    // Logika checkout di sini, Anda dapat mengirim data pembayaran ke API Midtrans atau penyedia payment gateway lainnya
+    // Checkout logic here, you can send payment data to Midtrans API or another payment gateway provider
     console.log('Checkout:', cart, address, paymentMethod);
 
-    // Reset keranjang menjadi kosong
+    // Reset the cart to empty
     setCart([]);
 
-    // Redirect ke halaman sukses
-    navigate('/');
+    // Redirect to the success page
+    navigate('/sukses-order');
+  };
+
+  const handleClearCart = () => {
+    setCart([]); // Mengatur keranjang menjadi array kosong
   };
 
   const onSuccess = (details, data) => {
-    // Logika yang akan dijalankan setelah pembayaran berhasil
-    console.log('Pembayaran berhasil:', details, data);
-    // Lakukan tindakan yang sesuai, misalnya, mengirim data pembayaran ke server
+    // Logic to be executed after successful payment
+    console.log('Payment succeeded:', details, data);
+    // Perform appropriate actions, e.g., send payment data to the server
     handleCheckout();
+    // Clear the cart
+    handleClearCart();
   };
 
   const onCancel = (data) => {
-    // Logika yang akan dijalankan jika pembayaran dibatalkan
-    console.log('Pembayaran dibatalkan:', data);
+    // Logic to be executed if payment is canceled
+    console.log('Payment canceled:', data);
   };
 
   const onError = (err) => {
-    // Logika yang akan dijalankan jika terjadi kesalahan
-    console.error('Terjadi kesalahan saat pembayaran:', err);
+    // Logic to be executed if an error occurs
+    console.error('Error during payment:', err);
   };
 
   return (
@@ -135,13 +162,19 @@ const Cart = () => {
                             <p className="cart-item-price">$ {item.price}</p>
                             <div className="counter">
                               <button
+                                className="counter-btn counter-decrease"
                                 onClick={() => handleDecreaseQuantity(item.id)}
                                 disabled={item.quantity === 1}
                               >
                                 -
                               </button>
-                              <span>{item.quantity}</span>
-                              <button onClick={() => handleIncreaseQuantity(item.id)}>+</button>
+                              <span className="counter-quantity">{item.quantity}</span>
+                              <button
+                                className="counter-btn counter-increase"
+                                onClick={() => handleIncreaseQuantity(item.id)}
+                              >
+                                +
+                              </button>
                             </div>
                             <Button
                               variant="outline-danger"
@@ -163,44 +196,10 @@ const Cart = () => {
                   <h4>Total Order</h4>
                   {cart.length > 0 ? (
                     <>
-                      <p>Total Item: {totalItems}</p>
-                      <p>Total Harga: $ {getTotalPrice()}</p>
-                      <form onSubmit={handleCheckout}>
-                        <div className="form-group">
-                          <label htmlFor="firstName">Nama Depan</label>
-                          <input
-                            type="text"
-                            className="form-control"
-                            id="firstName"
-                            value={firstName}
-                            onChange={handleFirstNameChange}
-                            required
-                          />
-                        </div>
-                        <div className="form-group">
-                          <label htmlFor="lastName">Nama Belakang</label>
-                          <input
-                            type="text"
-                            className="form-control"
-                            id="lastName"
-                            value={lastName}
-                            onChange={handleLastNameChange}
-                            required
-                          />
-                        </div>
-                        <div className="form-group">
-                          <label htmlFor="address">Alamat Pengiriman</label>
-                          <textarea
-                            className="form-control"
-                            id="address"
-                            rows="3"
-                            value={address}
-                            onChange={handleAddressChange}
-                            required
-                          ></textarea>
-                        </div>
-                        <div className="paypalbutton">
-                          <PayPalButtons
+                      {/* <p>Price: {totalItems}</p> */}
+                      <p>Total Harga:<strong className='totalprice'>${getTotalPrice()} </strong></p>
+                      <div className="paypalbutton">
+                        <PayPalButtons
                           style={{ layout: 'horizontal' }}
                           createOrder={(data, actions) => {
                             return actions.order.create({
@@ -222,11 +221,114 @@ const Cart = () => {
                           onCancel={onCancel}
                           onError={onError}
                         />
-                        </div>
-                        
-                      </form>
+                      </div>
                     </>
                   ) : null}
+                </div>
+              </div>
+              <div className="col-sm-6">
+                <div className="alamat">
+                  <h4>Alamat Pembeli</h4>
+                  <Form>
+                    <div className="nama">
+                      <Form.Group controlId="name">
+                        <Form.Label>Nama</Form.Label>
+                        <div className="row">
+                          <div className="col">
+                            <Form.Control
+                              type="text"
+                              placeholder="Masukkan nama depan"
+                              value={firstName}
+                              onChange={handleFirstNameChange}
+                            />
+                          </div>
+                          <div className="col">
+                            <Form.Control
+                              type="text"
+                              placeholder="Masukkan nama belakang"
+                              value={lastName}
+                              onChange={handleLastNameChange}
+                            />
+                          </div>
+                        </div>
+                      </Form.Group>
+                    </div>
+                    <div className="kontak">
+                      <Form.Group controlId="contact">
+                        <Form.Label>Kontak</Form.Label>
+                        <div className="row">
+                          <div className="col">
+                            <Form.Control
+                              type="email"
+                              placeholder="Masukkan email"
+                              value={email}
+                              onChange={handleEmailChange}
+                            />
+                          </div>
+                          <div className="col">
+                            <Form.Control
+                              type="text"
+                              placeholder="Masukkan nomor telepon"
+                              value={phone}
+                              onChange={handlePhoneChange}
+                            />
+                          </div>
+                        </div>
+                      </Form.Group>
+                    </div>
+                    <div className="alamat-form">
+                      <Form.Group controlId="address">
+                        <Form.Label>Alamat</Form.Label>
+                        <Form.Control
+                          as="textarea"
+                          rows={3}
+                          value={address}
+                          onChange={handleAddressChange}
+                        />
+                      </Form.Group>
+                    </div>
+                    <div className="kota">
+                      <Form.Group controlId="cityPostal">
+                        <Form.Label>Kota dan Kode Pos</Form.Label>
+                        <div className="row">
+                          <div className="col">
+                            <Form.Control
+                              type="text"
+                              placeholder="Masukkan kota"
+                              value={city}
+                              onChange={handleCityChange}
+                            />
+                          </div>
+                          <div className="col">
+                            <Form.Control
+                              type="text"
+                              placeholder="Masukkan kode pos"
+                              value={postalCode}
+                              onChange={handlePostalCodeChange}
+                            />
+                          </div>
+                        </div>
+                      </Form.Group>
+                    </div>
+                    {/* <div className="payment">
+                      <Form.Group controlId="paymentMethod">
+                      <Form.Label>Metode Pembayaran</Form.Label>
+                      <Form.Control
+                        as="select"
+                        value={paymentMethod}
+                        onChange={handlePaymentMethodChange}
+                      >
+                        <option value="paypal">PayPal</option>
+                        <option value="gopay">GoPay</option>
+                        <option value="ovo">OVO</option>
+                      </Form.Control>
+                    </Form.Group>
+                    </div>
+                    
+                    <Button variant="primary" onClick={handleCheckout}>
+                      Checkout
+                    </Button> */}
+                  </Form>
                 </div>
               </div>
             </div>

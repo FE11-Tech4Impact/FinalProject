@@ -12,7 +12,6 @@
 .cart-item {
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
   padding: 10px;
 }
 
@@ -38,36 +37,57 @@
 }
 
 .cart-item-title {
-  font-size: 18px;
-  margin-bottom: 5px;
+  font-size: 16px;
+  color: #070717;
 }
 
 .cart-item-price {
   font-size: 16px;
-  margin-bottom: 10px;
+  color: #00A376;
+  font-weight: 600;
 }
 
 .counter {
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
 }
 
-.counter button {
-  background-color: #ddd;
+.counter-btn {
+  padding: 4px;
+  font-size: 24px;
+  color: white;
   border: none;
-  padding: 5px 10px;
-  margin: 0 5px;
   cursor: pointer;
-  font-size: 14px;
+  outline: none;
 }
 
-.counter span {
+.counter-decrease {
+  background-color: #ff3d00;
+}
+
+.counter-decrease:hover {
+  background-color: #d32f2f;
+}
+
+.counter-decrease:disabled {
+  background-color: #fff;
+  cursor: not-allowed;
+  color: #9CA4AB;
+}
+
+.counter-increase {
+  background-color: #00A376;
+}
+
+
+.counter-quantity {
+  margin: 0 12px;
+  font-size: 16px;
   font-weight: bold;
+  color: #333;
 }
 
 .btn-outline-danger {
-  margin-top: 10px;
   font-size: 14px;
 }
 
@@ -91,6 +111,57 @@
   border-radius: 16px;
 }
 
+.cart-summary h4{
+  font-size: 24px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.cart-summary p{
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #9CA4AB;
+}
+
+.totalprice{
+  color: #070717;
+}
+
 .paypalbutton{
+  margin-top: 24px;
+}
+
+.alamat{
+  margin-top: 24px;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  padding: 24px;
+  color: #070717;
+  font-weight: 600;
+}
+
+.alamat h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #070717;
+}
+
+.nama{
+  margin-top: 24px;
+}
+
+.kontak{
+  margin-top: 24px;
+}
+
+.alamat-form{
+  margin-top: 24px;
+}
+
+.kota{
+  margin-top: 24px;
+}
+
+.payment{
   margin-top: 24px;
 }
