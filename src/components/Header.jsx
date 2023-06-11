@@ -80,7 +80,7 @@ export const Header = () => {
           <div className="button-header">
             {!loggedInUser ?(
               <>
-            <Button variant="outline-success">Daftar</Button>
+            <a href='/register' className="btn btn-outline-success">Register</a> 
             <a href='/login' className="btn btn-success">Masuk</a> 
             </>
             )
