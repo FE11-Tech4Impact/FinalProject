@@ -83,6 +83,26 @@ p {
   height: 24px;
 }
 
+.cart-icon {
+  position: relative;
+  font-size: 20px;
+  margin-right: 10px;
+  color: #212529;
+  text-decoration: none;
+}
+
+.cart-item-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: #dc3545;
+  color: #fff;
+  font-size: 12px;
+  padding: 2px 5px;
+  border-radius: 50%;
+}
+
+
 .search-icon {
   width: 24px;
   height: 24px;
@@ -103,6 +123,7 @@ p {
   height: 100%;
   box-sizing: border-box;
 }
+
 .info-title{
   display: flex;
   justify-content: space-between;

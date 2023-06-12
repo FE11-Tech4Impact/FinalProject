@@ -1,9 +1,9 @@
 .artikel{
-    margin: 80px 120px;
+    margin: 0 120px;
 }
 
 .artikel-title{
-    font-size: 30px;
+    font-size: 24px;
     font-weight: bold;
     margin-bottom: 20px;
     color: #121212;
@@ -17,12 +17,7 @@
     margin-bottom: 16px;
 }
 
-.artikel .card-testimonial{
-    margin: 24px 0;
-}
-.artikel .card-text{
-    height: 7rem;
-    overflow-y: hidden;
+.card-text{
     font-size: 16px;
     color: #78828A;
     margin-bottom: 0;
@@ -104,3 +99,4 @@
     
 }
 
+}

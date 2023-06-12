@@ -1,7 +1,10 @@
-
+import ArtikelList from '../components/artikelList'
 export const Artikel = () => {
   return (
-    <div>Artikel</div>
+    <div>
+    <ArtikelList /> 
+    </div>
+    
   )
 }
 

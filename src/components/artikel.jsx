@@ -39,9 +39,9 @@ const Artikel = () => {
                     <img src={article.image} alt="Gambar" style={{ width: '100%', height: 'auto' }} />
                     <h5 className="card-title">{article.title}</h5>
                     <p className="card-text">{article.text}</p>
-                    <Link to={article.link} className="btn btn-success">
-                      Baca Selengkapnya
-                    </Link>
+                    <Link to={`/detail-artikel/${article.id}`} className="btn btn-success">
+                  Lihat Artikel Lengkap
+                </Link>
                   </div>
                 </div>
               ))}

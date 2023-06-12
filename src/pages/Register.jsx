@@ -1,15 +1,15 @@
 import React from 'react'
-import LoginPage from '../components/LoginPage'
+import RegisterPage from '../components/RegisterPage'
 import { AuthProvider } from '../context/AuthContext'
 import '../css/login.css'
 
-export const Login = () => {
+export const Register = () => {
     return (
  
         <AuthProvider>
-        <LoginPage />
+        <RegisterPage />
         </AuthProvider>
     )
   }
   
-  export default Login
+  export default Register

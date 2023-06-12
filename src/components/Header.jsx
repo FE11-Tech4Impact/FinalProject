@@ -1,19 +1,18 @@
-import { NavLink } from "react-router-dom";
-import { Button } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
-import {
-  HiShoppingCart,
-  HiSearch,
-  HiChevronDown,
-  HiMenu,
-} from "react-icons/hi";
+
+import { NavLink } from 'react-router-dom';
+import { ProductContext } from '../context/ProductContext';
+import { Button } from 'react-bootstrap';
+import { HiShoppingCart, HiSearch, HiChevronDown } from 'react-icons/hi';
+import '../css/header.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useState, useContext, useRef, useEffect } from "react";
-import "../css/header.css";
-import Logo from "../assets/logo.png";
-import "../globalstyle.css";
-import { Link } from "react-router-dom";
+import Logo from '../assets/logo.png';
+import '../globalstyle.css';
+
 
 export const Header = () => {
+  const { cartItems } = useContext(ProductContext);
+
   const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
   const [isOpen, setIsOpen] = useState(false);
   const [clickCount, setClickCount] = useState(0);
@@ -87,11 +86,7 @@ export const Header = () => {
             >
               Artikel
             </NavLink>
-            <NavLink
-              to="/tokoObat"
-              className="nav-link"
-              activeClassName="active"
-            >
+            <NavLink to="/toko" className="nav-link" activeClassName="active">
               Toko Obat
             </NavLink>
             <button onClick={exit} className="keluar">
@@ -101,86 +96,32 @@ export const Header = () => {
         </div>
         <div className="icons">
           <HiSearch className="search-icon" />
-          <HiShoppingCart className="cart-icon" />
+          <NavLink to="/cart" className="cart-icon">
+            <HiShoppingCart />
+            <span className="cart-item-count">{cartItems.length}</span>
+          </NavLink>
           <div className="button-header">
             {!loggedInUser ? (
               <>
-                <Button variant="outline-success">Daftar</Button>
-                <Link to="/login" className="btn btn-success">
-                  Masuk
-                </Link>
-              </>
-            ) : (
+            <a href='/register' className="btn btn-outline-success">Register</a> 
+            <a href='/login' className="btn btn-success">Masuk</a> 
+            </>
+            )
+            : (
               <>
-                <div className="info-title">
-                  <div className="name">
-                    {loggedInUser.username.toString().charAt(0).toUpperCase()}
-                  </div>
-                  <h6 className="navbar-info-title">
-                    {loggedInUser.username.toString().charAt(0).toUpperCase() +
-                      loggedInUser.username.toString().slice(1)}
-                  </h6>
-                  <div class="dropdown" ref={ref}>
-                    <button onClick={toggleMenu}>
-                      <HiChevronDown className="dropdown-button" />
-                    </button>
-                    {isOpen && (
-                      <div class="dropdown-content">
-                        <a href="#" className="dropdown-item">
-                          Profil
-                        </a>
-                        <a href="#" className="dropdown-item">
-                          Pengaturan
-                        </a>
-                        <button onClick={exit} className="dropdown-item">
-                          Keluar
-                        </button>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </>
-            )}
-          </div>
-          <div class="dropdown-side" ref={ref}>
-            <button onClick={toggleSide} className="side">
-              <HiMenu className="burger-icon" />
-            </button>
-            {isSide && (
-              <>
-                <div className="menu men-side">
-                  <Link
-                    exact
-                    to="/"
-                    className="nav-link"
-                    activeClassName="active"
-                  >
-                    Beranda
-                  </Link>
-                  <Link
-                    to="/cari-dokter"
-                    className="nav-link"
-                    activeClassName="active"
-                  >
-                    Cari Dokter
-                  </Link>
-                  <Link
-                    to="/artikel"
-                    className="nav-link"
-                    activeClassName="active"
-                  >
-                    Artikel
-                  </Link>
-                  <Link
-                    to="/tokoObat"
-                    className="nav-link"
-                    activeClassName="active"
-                  >
-                    Toko Obat
-                  </Link>
-                  <button onClick={exit} className="keluar">
-                    Keluar
-                  </button>
+              <div className="info-title">
+              <div className='name'>
+                {loggedInUser.username.toString().charAt(0).toUpperCase()}
+              </div>
+              <h6 className="navbar-info-title">{loggedInUser.username.toString().charAt(0).toUpperCase() + loggedInUser.username.toString().slice(1)}</h6>
+              <div className="dropdown" ref={ref}>
+
+               <button onClick={toggleMenu}><HiChevronDown className='dropdown-button' /></button>
+               {isOpen && (
+                <div className="dropdown-content">
+                  <a href="#" className='dropdown-item'>Profil</a>
+                  <a href="#" className='dropdown-item'>Pengaturan</a>
+                  <button onClick={exit} className='dropdown-item'>Keluar</button>
                 </div>
               </>
             )}
