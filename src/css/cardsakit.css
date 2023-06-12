@@ -42,13 +42,14 @@
     align-items: center;
     justify-content: space-between;
     height: 16.7rem;
+    gap: 12px;
     overflow-y: hidden;
     margin: 0;
 
   }
   .card-sakit {
     display: flex;
-    margin-top: 8px;
+    background-color: aquamarine;
     padding:0;
     border-radius: 10px;
     text-align: center;
@@ -67,7 +68,6 @@
   .card-jenissakit .col-sm-2 {
     width: 6rem;
     padding: 0;
-    margin-bottom: 12px;
 
   }
 
