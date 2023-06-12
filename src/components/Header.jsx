@@ -66,7 +66,7 @@ export const Header = () => {
             <NavLink to="/artikel" className="nav-link" activeClassName="active">
               Artikel
             </NavLink>
-            <NavLink to="/tokoObat" className="nav-link" activeClassName="active">
+            <NavLink to="/toko" className="nav-link" activeClassName="active">
               Toko Obat
             </NavLink>
           </div>

@@ -35,13 +35,12 @@ const CardJenisSakit = () => {
       <div className="card-jenissakit">
         <div className="row">
           {cards.map((card, index) => (
-            <div className="col-sm-2" key={index}>
-             <Link to={card.path} className="card-sakit custom-link">
+            <div className="col-sm-6 col-md-4 col-lg-3" key={index}>
+              <Link to={card.path} className="card-sakit custom-link">
                 <div className="card-body">
                   <img
                     src={card.image}
                     alt={card.title}
-                    border="0"
                     width="64px"
                     height="64px"
                   />

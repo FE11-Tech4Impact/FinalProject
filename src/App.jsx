@@ -22,7 +22,6 @@ import DetailArtikel from './components/DetailArtikel';
 
 
 
-
 function App() {
   return (
     <ProductProvider>
@@ -35,7 +34,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/cari-dokter" element={<CariDokter />} />
           <Route path="/artikel" element={<Artikel />} />
-          <Route path="/tokoobat" element={<Toko />} />
+          <Route path="/toko" element={<Toko />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/profil-dokter/:id" element={<DokterDetail />} />
