@@ -18,7 +18,7 @@ const Home = () => {
                     <div className="card-body">
                         <h5 className="banner-title">Dapatkan Konsultasi Kesehatan</h5>
                         <p className="banner-text">Dengan mudah, cepat, dan aman</p>
-                        <Link to="/cari-dokter" className="ban-btn btn btn-success">
+                        <Link to="/cari-dokter" className="ban-btn btn btn-success ">
                             Cari Dokter
                         </Link>
                     </div>
@@ -35,20 +35,26 @@ const Home = () => {
             <div className="col-sm-10">
                 <h3 className="cardSakit-title">Cari Obat</h3>
             </div>
+
             <div className="col-sm-2 text-end">
                 <a href="/toko" className="btn btn-success">
                     Lihat Semuanya 
-                </a>
+                </Link>
             </div>
             <CardJenisSakit/>
+            <div className="bt2 col-sm-2 text-end">
+                <Link to="/artikel" className="btn btn-success">
+                    Lihat Semuanya 
+                </Link>
+            </div>
         </div>
     </div>
 
     <CardDokter/>
-    <Testimonial/>
-    <Artikel/>
+    <Testimonial />
     <BannerDaftar />
-    <Footer/>
+    <Artikel />
+    <Footer />
 
 </>
     );

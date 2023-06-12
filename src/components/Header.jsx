@@ -1,3 +1,4 @@
+
 import { NavLink } from 'react-router-dom';
 import { ProductContext } from '../context/ProductContext';
 import { Button } from 'react-bootstrap';
@@ -16,6 +17,7 @@ export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [clickCount, setClickCount] = useState(0);
   const ref = useRef(null);
+  const [isSide, setIsSide] = useState(false);
 
   const toggleMenu = () => {
     setClickCount(clickCount + 1);
@@ -27,12 +29,23 @@ export const Header = () => {
       setIsOpen(true);
     }
   };
-  
+
+  const toggleSide = () => {
+    setClickCount(clickCount + 1);
+
+    if (clickCount === 1) {
+      setIsSide(false);
+      setClickCount(0);
+    } else {
+      setIsSide(true);
+    }
+  };
+
   const handleClickOutside = (event) => {
     if (ref.current && !ref.current.contains(event.target)) {
       setIsOpen(false);
       setClickCount(0);
-
+      setIsSide(false);
     }
   };
 
@@ -44,31 +57,41 @@ export const Header = () => {
     };
   }, []);
 
-
-  const exit =() => {
+  const exit = () => {
     // logout();
     localStorage.removeItem("loggedInUser");
     window.location.reload();
-  }
+  };
 
   return (
     <div>
       <div className="navbar">
         <div className="menubar">
           <img src={Logo} alt="Not Found" className="logo" />
-          <div className="menu">
+          <div className="menu men-nav">
             <NavLink exact to="/" className="nav-link" activeClassName="active">
               Beranda
             </NavLink>
-            <NavLink to="/cari-dokter" className="nav-link" activeClassName="active">
+            <NavLink
+              to="/cari-dokter"
+              className="nav-link"
+              activeClassName="active"
+            >
               Cari Dokter
             </NavLink>
-            <NavLink to="/artikel" className="nav-link" activeClassName="active">
+            <NavLink
+              to="/artikel"
+              className="nav-link"
+              activeClassName="active"
+            >
               Artikel
             </NavLink>
             <NavLink to="/toko" className="nav-link" activeClassName="active">
               Toko Obat
             </NavLink>
+            <button onClick={exit} className="keluar">
+              Keluar
+            </button>
           </div>
         </div>
         <div className="icons">
@@ -78,7 +101,7 @@ export const Header = () => {
             <span className="cart-item-count">{cartItems.length}</span>
           </NavLink>
           <div className="button-header">
-            {!loggedInUser ?(
+            {!loggedInUser ? (
               <>
             <a href='/register' className="btn btn-outline-success">Register</a> 
             <a href='/login' className="btn btn-success">Masuk</a> 
@@ -100,14 +123,9 @@ export const Header = () => {
                   <a href="#" className='dropdown-item'>Pengaturan</a>
                   <button onClick={exit} className='dropdown-item'>Keluar</button>
                 </div>
-               )}
-              </div>
-
-              </div>
               </>
             )}
           </div>
-       
         </div>
       </div>
     </div>

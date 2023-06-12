@@ -26,7 +26,7 @@ const Artikel = () => {
           <div className="col-sm-10">
             <h3 className="artikel-title">Artikel Kesehatan</h3>
           </div>
-          <div className="col-sm-2 text-end">
+          <div className="bt1 col-sm-2 text-end">
             <a href="/artikel" className="btn btn-success">
               Lihat Semuanya
             </a>
@@ -46,6 +46,11 @@ const Artikel = () => {
                 </div>
               ))}
             </div>
+          </div>
+          <div className="bt2 col-sm-2 text-end">
+            <a href="/artikel" className="btn btn-success">
+              Lihat Semuanya
+            </a>
           </div>
         </div>
       </div>
