@@ -174,10 +174,147 @@ p {
 
 }
 
+.bt1{
+  display: none;
+}
+
+.keluar{
+  display: none;
+}
+
+.burger-icon {
+  display: none;
+}
 
 @media screen and (max-width: 540px) {
-  .navbar{
-    display:none;
+
+  .menubar .men-nav{
+    display: none;
   }
 
+  .men-side{
+    right: 20px;
+    top: 4rem;
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 15.5rem;
+    width: 8.5rem;
+    background-color: rgb(255, 255, 255);
+    z-index: 99999;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 14px;
+
+  }
+
+  .keluar{
+    display: block;
+    border: none;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    color: red;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  
+  .navbar{
+    padding: 16px 20px;
+  }
+  
+  
+  .menubar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 24px;
+    height: fit-content;
+    box-sizing: border-box;
+  }
+  
+  .logo {
+    gap: 8px;
+    width: 36px;
+    height: 100%;
+  }
+  
+  
+  .beranda {
+    font-size: 12px;
+
+  }
+  
+  .cari-dokter,
+  .artikel,
+  .toko-obat {
+    color: rgba(120, 130, 138, 1);
+    font-size: 12px;
+    line-height: 140%;
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+  }
+  
+  .icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 16px;
+    box-sizing: border-box;
+  }
+  
+  .search-icon {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .cart-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .side{
+    border: none;
+    background-color: transparent;
+  }
+  .burger-icon {
+    display: block;
+    width: 20px;
+    height: 20px;
+  }
+
+  .dropdown{
+    display: none;
+  }
+
+  .navbar .outline-success,
+  .navbar .btn
+  {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .info-title .name{
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    background-color: rgb(27, 190, 117);
+    color: aliceblue;
+    font-size: 18px;
+    font-weight: 700;
+    font-style: bold;
+  
+  }
+
+  .dropdown-side Link:hover{
+    color:  rgb(27, 190, 117);
+  }
 }
