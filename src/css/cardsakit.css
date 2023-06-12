@@ -44,7 +44,6 @@
     height: 16.7rem;
     overflow-y: hidden;
     margin: 0;
-    margin-bottom: 12px;
 
   }
   .card-sakit {
@@ -68,6 +67,8 @@
   .card-jenissakit .col-sm-2 {
     width: 6rem;
     padding: 0;
+    margin-bottom: 12px;
+
   }
 
   .card-jenissakit .col-sm-2:nth-child(0) {
