@@ -24,9 +24,9 @@ const UserList = () => {
             <h3 className="rekomendasi-title">Dokter Rekomendasi</h3>
           </div>
           <div className="col-sm-2 text-end">
-            <Link to="/cari-dokter" className="btn btn-success">
-              Lihat Semuanya
-            </Link>
+            <a href="/cari-dokter" className="btn btn-success">
+              Lihat selengkapnya
+            </a>
           </div>
       </div>
       <div className="row dokter-daftar">
