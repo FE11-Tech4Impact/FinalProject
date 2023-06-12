@@ -51,7 +51,9 @@ const Home = () => {
 
     <CardDokter/>
     <Testimonial />
+    <BannerDaftar />
     <Artikel />
+    <Footer />
 
 </>
     );
