@@ -24,6 +24,13 @@ const RegisterPage = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
+    // Periksa apakah username, password, dan email kosong
+    if (username.trim() === '' || password.trim() === '' || email.trim() === '') {
+      window.alert('Username, password, dan email harus diisi');
+      return;
+    }
+
     try {
       const response = await fetch(
         'https://6454643dc18adbbdfeb53cd7.mockapi.io/api/fe-11/user',
@@ -43,7 +50,7 @@ const RegisterPage = () => {
         window.location.href = '/';
         console.log('Registrasi berhasil');
       } else {
-        alert('Registrasi tidak berhasil');
+        window.alert('Registrasi tidak berhasil');
         // Registrasi gagal
         // Lakukan penanganan registrasi gagal
         setError('Registrasi tidak berhasil');

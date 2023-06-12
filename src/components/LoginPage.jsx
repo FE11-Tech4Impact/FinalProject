@@ -7,7 +7,6 @@ const LoginPage = () => {
   const { isAuthenticated, login, logout } = useContext(AuthContext);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
 
   const handleUsernameChange = (event) => {
     setUsername(event.target.value);
@@ -19,6 +18,13 @@ const LoginPage = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
+    // Periksa apakah username dan password kosong
+    if (username.trim() === "" || password.trim() === "") {
+      window.alert("Username dan password harus diisi");
+      return;
+    }
+
     try {
       const response = await fetch(
         "https://6454643dc18adbbdfeb53cd7.mockapi.io/api/fe-11/user",
@@ -38,10 +44,9 @@ const LoginPage = () => {
         window.location.href = "/";
         console.log("Login berhasil");
       } else {
-        alert("Login tidak berhasil");
+        window.alert("Login tidak berhasil");
         // Login gagal
         // Lakukan penanganan login gagal
-        setError("Username atau password salah");
       }
     } catch (error) {
       console.error("Terjadi kesalahan", error);
@@ -54,14 +59,12 @@ const LoginPage = () => {
 
   return (
     <div>
-    
       {isAuthenticated ? (
         <></>
       ) : (
         <>
-          {error && <p>{error}</p>}
           <form onSubmit={handleSubmit} className="login-form">
-              <h2>Masuk</h2>
+            <h2>Masuk</h2>
             <div>
               <label htmlFor="username">Username:</label>
               <input
