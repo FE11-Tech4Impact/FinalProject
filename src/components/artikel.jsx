@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../css/artikel.css';
+import { Link } from 'react-router-dom';
 
 const Artikel = () => {
   const [articles, setArticles] = useState([]);
@@ -38,9 +39,9 @@ const Artikel = () => {
                     <img src={article.image} alt="Gambar" style={{ width: '100%', height: 'auto' }} />
                     <h5 className="card-title">{article.title}</h5>
                     <p className="card-text">{article.text}</p>
-                    <a href={article.link} className="btn btn-success">
-                      Lihat semuanya
-                    </a>
+                    <Link to={`/detail-artikel/${article.id}`} className="btn btn-success">
+                  Lihat Artikel Lengkap
+                </Link>
                   </div>
                 </div>
               ))}

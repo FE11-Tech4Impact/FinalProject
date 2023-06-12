@@ -18,6 +18,8 @@ import SuksesDokter from './components/SuksesDokter';
 import ChatContainer from './components/ChatContainer';
 import OrderSukses from './components/OrderSukses';
 import Register from './pages/Register';
+import DetailArtikel from './components/DetailArtikel';
+
 
 
 
@@ -43,6 +45,7 @@ function App() {
           <Route path="/sukses-order-dokter" element={<SuksesDokter />} />
           <Route path="/chat" element={<ChatContainer />} />
           <Route path="/sukses-order" element={<OrderSukses />} />
+          <Route path="/detail-artikel/:articleId" element={<DetailArtikel />} />
         </Routes>
         </OrderProvider>
         </UserProvider>
