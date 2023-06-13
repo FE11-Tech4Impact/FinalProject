@@ -163,7 +163,7 @@ const UserDetail = () => {
                 {isConfirm ? (
                   <Link
                   className="disabled"
-                  to={`/login`}
+                  to={``}
                   
                 >
                   Lanjutkan Pemesanan
