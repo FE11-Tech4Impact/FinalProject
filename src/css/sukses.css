@@ -32,18 +32,21 @@
     .suksesorder {
         margin-top: 20px;
         margin-bottom: 60px;
-        margin-left: 20px;
-        margin-right: 20px;
+        margin-left: 10px;
+        margin-right: 10px;
         padding: 50px;
         align-items: center;
         text-align: center;
     }
     
     .suksesorder h2{
+        margin: 0 10px;
         font-size: 18px;
     }
 
     .suksesorder h5 {
+        margin: 0 10px;
+
         font-size: 14px;
         font-weight: 500;
         color: #00A376;
@@ -56,6 +59,7 @@
 
     .suksesorder .bt-sukses{
         font-size: 14px;
+        margin: 0 10px;
         background-color: #00A376;
         padding: 8px 16px;
         border: none;
