@@ -25,9 +25,9 @@ export default function ArtikelList() {
         <div className="row">
           {articles.map((article) => (
             <div className="col-sm-4" key={article.id}>
-              <div className="card-body">
+              <div className="card-body artikel-card">
                 <img src={article.image} alt="Gambar" style={{ width: '100%', height: 'auto' }} />
-                <h5 className="card-title">{article.title}</h5>
+                <h5 className="artikel-tittle">{article.title}</h5>
                 <p className="card-text">{article.text}</p>
                 <Link to={`/detail-artikel/${article.id}`} className="btn btn-success">
                 Lihat Selengkapnya

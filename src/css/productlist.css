@@ -59,7 +59,7 @@
 }
 
 /* Responsiveness */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 540px) {
   .obat {
     margin: 24px 20px;
   }

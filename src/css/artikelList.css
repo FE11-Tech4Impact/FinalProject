@@ -1,12 +1,16 @@
 .banner-article{
-    margin: 0 120px;
+    margin: 40px 120px;
 }
 
-.card-title{
+.artikel-tittle{
     font-size: 24px;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
     color: #121212;
+}
+
+.artikel-card{
+    margin-bottom: 40px;
 }
 
 .card-body img{
@@ -17,11 +21,22 @@
 .card-text{
     font-size: 16px;
     color: #78828A;
+    margin-bottom: 16px;
+    line-height: 1.5;
 }
 
 
 @media Screen and (max-width: 540px) {
     .banner-article{
-        margin: 16;
+        margin: 0 16px;
+    }
+
+    .artikel-card{
+        margin-bottom: 24px;
+    }
+
+    .artikel-tittle {
+        font-size: 24px;
+       
     }
 }
