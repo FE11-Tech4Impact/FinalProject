@@ -274,7 +274,7 @@ const UserDetail = () => {
               </button>
               <div className="next-page">
                 {isConfirm ? (
-                  <Link
+                   <Link
                   className="disabled"
                   to={`/login`}
                 >
