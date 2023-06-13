@@ -33,14 +33,19 @@ const Home = () => {
     <div className="JenisSakit">
         <div className="row">
             <div className="col-sm-10">
-                <h3 className="cardSakit-title">Cari Obat</h3>
+                <h3 className="rekomendasi-title">Cari Obat</h3>
             </div>
-            <div className="col-sm-2 text-end">
+            <div className="bt1 col-sm-2 text-end">
                 <a href="/tokoObat" className="btn btn-success">
                     Lihat Semuanya 
                 </a>
             </div>
             <CardJenisSakit/>
+            <div className="bt2 col-sm-2 text-end">
+                <a href="/tokoObat" className="btn btn-success">
+                    Lihat Semuanya 
+                </a>
+            </div>
         </div>
     </div>
 

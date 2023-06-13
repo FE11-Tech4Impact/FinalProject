@@ -13,5 +13,17 @@
     border-radius: 10px;
     max-width: 100%;
     color: white;
-    font-size: 16pxem;
+    font-size: 16px;
 }
+
+@media screen and (max-width:540px) {
+    .pesan{
+        padding: 8px;
+        background-color: #00A376;
+        border-radius: 10px;
+        max-width: 100%;
+        color: white;
+        font-size: 12px;
+    }
+}
+

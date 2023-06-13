@@ -109,7 +109,7 @@ const OrderDokter = () => {
                   <p>{inputValue}</p>
                 </div>
                 <div className="jenis-consult">
-                  <Icon icon="akar-icons:schedule" className="ic" />
+                  <Icon icon="akar-icons:schedule" className="ic ic-chat" />
                   <p>{selectedSchedule}</p>
                 </div>
               </div>

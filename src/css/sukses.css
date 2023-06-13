@@ -9,7 +9,7 @@
 }
 
 .suksesorder h5 {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 500;
     color: #00A376;
 }
@@ -17,4 +17,49 @@
 .image-sukses {
     width: 500px;
     height: 500px;
+}
+
+.suksesorder .bt-sukses{
+    font-size: 16px;
+    background-color: #00A376;
+    padding: 8px 24px;
+    border: none;
+    margin-top: 4px;
+
+}
+
+@media screen and (max-width:540px) {
+    .suksesorder {
+        margin-top: 20px;
+        margin-bottom: 60px;
+        margin-left: 20px;
+        margin-right: 20px;
+        padding: 50px;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .suksesorder h2{
+        font-size: 18px;
+    }
+
+    .suksesorder h5 {
+        font-size: 14px;
+        font-weight: 500;
+        color: #00A376;
+    }
+    
+    .image-sukses {
+        width: 210px;
+        height: 230px;
+    }
+
+    .suksesorder .bt-sukses{
+        font-size: 14px;
+        background-color: #00A376;
+        padding: 8px 16px;
+        border: none;
+        margin-top: 4px;
+
+    }
 }

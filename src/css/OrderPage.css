@@ -2,7 +2,7 @@
 
 
 .page-detail-order{
-  margin: 50px 550px;
+  margin: 50px 340px;
   border: 1px solid rgb(196, 196, 196);
   border-radius: 12px;
   height: auto;
@@ -25,6 +25,7 @@
 }
 
 .card-page-dokter {
+  border: 1px solid rgb(196, 196, 196);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -157,4 +158,164 @@
   height: 4px;
   position: absolute;
   z-index: 99;
+}
+
+
+@media screen and (max-width:540px) {
+  .page-detail-order{
+    margin: 40px 30px;
+    border: 1px solid rgb(196, 196, 196);
+    border-radius: 12px;
+    height: auto;
+  }
+  
+  .page-detail-order .card-profil-img{
+    width: 6rem;
+  }
+  .order-page {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+  }
+  
+ .page-detail-order .card-profil-body{
+  width: 10rem;
+  gap: 4px;
+ } 
+
+ .page-detail-order .card-profil-body h3{
+    margin-bottom: 2px;
+    font-size: 14px;
+ }
+
+ .page-detail-order .card-profil-body .ic{
+    font-size: 18px;
+ }
+
+ .page-detail-order .card-profil-body .ic-chat{
+  font-size: 18px;
+}
+
+ .page-detail-order .card-profil-body .consult{
+  margin-top: 8px;
+  width: 9rem;
+  gap: 4px;
+  flex-direction: column;
+ }
+  .card-page-dokter {
+    gap: 0.2rem;
+    width: 25rem;
+    height: 9.4rem;
+    padding-left: 0.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: 8px;
+  }
+    
+  .order-detail form {
+    border-radius: 12px;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+  
+
+  .form-order label{
+      font-size: 14px;
+      font-weight: 700;
+      width: 10rem;
+      color: #000;
+      margin-bottom: 0.5rem;
+  }
+  
+  .form-order input{
+      font-size: 12px;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    
+      color: #000;
+      width: 100%;
+      height: 2.5rem;
+      border-radius: 8px;
+      padding: 8px;
+      border: 1px solid rgb(196, 196, 196);
+      
+  }
+  
+  .form-order select{
+      font-size: 12px;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+  
+      color: #000;
+      width: 100%;
+      height: 2.5rem;
+      border-radius: 8px;
+      padding: 8px;
+      border: 1px solid rgb(196, 196, 196);
+      
+  }
+  
+  
+  .total-order {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-direction: column;
+      margin: 0;
+      padding: 0.5rem;
+    }
+  
+    .total-order h5{
+      font-size: 14px;
+      font-weight: 700;
+      margin: 0;
+      display: flex;
+      justify-content: flex-start;
+      width: 10rem;
+      color: #000;
+      margin-bottom: 0.5rem;
+    }
+    
+    .total-order .total-item{
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+  
+    .total-item p{
+      font-size: 12px;
+      font-weight: 500;
+      margin: 0;
+      display: flex;
+      justify-content: flex-start;
+      color: #000;
+      margin-bottom: 0.5rem;
+    }
+  
+    .button-form-order{
+      width: 100%;
+      height: 32px;
+      padding: 4px;
+      margin-top: 8px;
+      background-color:rgb(27, 190, 117);
+      border: rgb(27, 190, 117);
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 500;
+      color: white;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+  }
+  
+  .pay-image{
+    width: 4px;
+    height: 4px;
+    position: absolute;
+    z-index: 99;
+  }
 }

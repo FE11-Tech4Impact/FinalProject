@@ -60,8 +60,67 @@
 .dokterRekomendasi{
     margin: 0 120px;
 }
-} 
+
 
 .card-dokter{
     /* display: flex; */
+}
+
+.JenisSakit .row .bt2{
+    display: none;
+}
+
+@media Screen and (max-width: 540px) {
+
+    .banner{
+        margin: 40px 20px;
+        border-radius: 16px;
+    }
+    
+    .banner-cover{
+        margin: 20px 12px;
+       
+    }
+    
+    .banner-title{
+        font-size: 24px;
+        font-weight: 700;
+    }
+    
+   
+    .banner-text{
+        font-size: 12px;
+        font-weight: 400;
+    }
+    
+    .banner .btn{
+        margin-top: 48px;
+        font-size: 12px;
+        
+    }
+    
+    .col-sm-6 img{
+        display: none;
+    }
+
+    .JenisSakit .rekomendasi-title{
+        font-size: 22px;
+    }   
+
+    .JenisSakit .row .bt1{
+        display: none;
+    }
+
+    .JenisSakit .col-sm-2:last-child{
+        display: block;
+        margin-top: 1.5rem;
+    }
+
+    .JenisSakit .btn{
+        width: 100%;
+        font-size: 12px;
+    }
+
+
+
 }

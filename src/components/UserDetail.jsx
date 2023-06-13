@@ -98,6 +98,102 @@ const UserDetail = () => {
               </div>
             </div>
           </div>
+          <div className="card-order">
+            <h3>Tipe Konsultasi</h3>
+            <div className="type-consult">
+              <Icon icon="carbon:chat" className="ic" />
+              <select value={selectedConsultFilter} onChange={handleConsult}>
+                <option value="Konsultasi Video">Konsultasi Video</option>
+                <option value="Konsultasi Chat">Konsultasi Chat</option>
+              </select>
+            </div>
+            <h3>Jadwal Konsultasi</h3>
+
+            <form onSubmit={handleSubmit}>
+              <label className="jadwal-btn">
+                <input
+                  type="radio"
+                  value={
+                    userDetail.day1 + ", " + userDetail.date1.substring(0, 10)
+                  }
+                  checked={
+                    selectedFeature ===
+                    userDetail.day1 + ", " + userDetail.date1.substring(0, 10)
+                  }
+                  onChange={handleFeatureChange}
+                />
+                {userDetail.day1}, {userDetail.date1.substring(0, 10)}
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  value={
+                    userDetail.day2 + ", " + userDetail.date2.substring(0, 10)
+                  }
+                  checked={
+                    selectedFeature ===
+                    userDetail.day2 + ", " + userDetail.date2.substring(0, 10)
+                  }
+                  onChange={handleFeatureChange}
+                />
+                {userDetail.day2}, {userDetail.date2.substring(0, 10)}
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  value={
+                    userDetail.day3 + ", " + userDetail.date3.substring(0, 10)
+                  }
+                  checked={
+                    selectedFeature ===
+                    userDetail.day3 + ", " + userDetail.date3.substring(0, 10)
+                  }
+                  onChange={handleFeatureChange}
+                />
+                {userDetail.day3}, {userDetail.date3.substring(0, 10)}
+              </label>
+              <button
+                type="submit"
+                className={isClicked ? "clicked" : "button-form"}
+                disabled={isClicked}
+              >
+                Pilih Jadwal
+              </button>
+              <div className="next-page">
+                {isConfirm ? (
+                  <Link
+                  className="disabled"
+                  to={`/login`}
+                  
+                >
+                  Lanjutkan Pemesanan
+                </Link>
+                ) : (
+                    <>
+                    {loggedInUser ? (
+                    <Link
+                    className="button-form"
+                    to={`/order-dokter/${userDetail.id}`}
+                    
+                  >
+                    Lanjutkan Pemesanan
+                  </Link>) : (
+                    <Link
+                    className="button-form"
+                    to={`/login`}
+                    
+                  >
+                    Lanjutkan Pemesanan
+                  </Link>)  
+                    }
+
+                    </>
+                )
+              
+                }
+              </div>
+            </form>
+          </div>
           <div className="card-profil-detail">
             <h3>Tentang Dokter</h3>
             <p>{userDetail.about}</p>

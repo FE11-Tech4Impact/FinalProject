@@ -3,6 +3,8 @@ import "../css/dokter.css";
 import "../globalstyle.css";
 import { Link } from "react-router-dom";
 
+// import { userContext } from '../context/userContext'
+
 const UserList = () => {
   const [users, setUsers] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -10,6 +12,7 @@ const UserList = () => {
   const [selectedJobs, setSelectedJobs] = useState([]);
   const usersPerPage = 8; // Jumlah data per halaman
   const [selectedPriceFilter, setSelectedPriceFilter] = useState("All");
+  // const { doctor } = useContext( userContext );
 
   useEffect(() => {
     fetch("https://64527770a2860c9ed40d2a69.mockapi.io/doctor")
@@ -18,9 +21,11 @@ const UserList = () => {
       .catch((error) => console.log(error));
   }, []);
 
+  // Menghitung indeks awal dan akhir data yang ditampilkan
   const indexOfLastUser = currentPage * usersPerPage;
   const indexOfFirstUser = indexOfLastUser - usersPerPage;
 
+  // Filter data pengguna berdasarkan kata kunci pencarian
   const filteredUsers = users.filter((user) => {
     const isNameMatched = user.name
       .toLowerCase()
@@ -39,15 +44,18 @@ const UserList = () => {
 
   const displayedUsers = filteredUsers.slice(indexOfFirstUser, indexOfLastUser);
 
+  // Fungsi untuk mengubah halaman
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
 
+  // Fungsi untuk memperbarui kata kunci pencarian
   const handleSearch = (event) => {
     setSearchKeyword(event.target.value);
-    setCurrentPage(1);
+    setCurrentPage(1); // Reset halaman ke 1 saat melakukan pencarian
   };
 
+  // Fungsi untuk memperbarui spesialis yang dipilih
   const handleJobSelection = (event) => {
     const job = event.target.value;
     if (event.target.checked) {
@@ -57,12 +65,13 @@ const UserList = () => {
         selectedJobs.filter((selectedJob) => selectedJob !== job)
       );
     }
-    setCurrentPage(1);
+    setCurrentPage(1); // Reset halaman ke 1 saat melakukan pemilihan pekerjaan
   };
 
+  // Fungsi untuk memperbarui filter harga
   const handlePriceFilter = (event) => {
     setSelectedPriceFilter(event.target.value);
-    setCurrentPage(1);
+    setCurrentPage(1); // Reset halaman ke 1 saat melakukan pemilihan filter umur
   };
 
   if (!users) {
@@ -205,10 +214,11 @@ const UserList = () => {
             </label>
           </div>
         </div>
+
         <div className="dokterRekomendasi">
-          <div className="main-row" style={{ display: "flex", flexWrap: "wrap" }}>
+          <div className="row main-row">
             {displayedUsers.map((user, index) => (
-              <div key={index} className="col-sm-3 main" style={{ width: "25%" }}>
+              <div key={index} className="col-sm-3 main">
                 <div className="card border-0">
                   <div className="card-body border-0">
                     <div className="row border-0">

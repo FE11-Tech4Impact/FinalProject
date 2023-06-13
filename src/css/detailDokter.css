@@ -130,7 +130,7 @@
     padding: 24px;
 }
 
-.order-dokter h3{
+.profil-dokter h3{
     font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 14px;
@@ -197,7 +197,7 @@
 }
 
 
-.order-dokter form{
+.profil-dokter form{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -208,7 +208,7 @@
 }
 
 
-.order-dokter label{
+.profil-dokter label{
     border-radius: 8px;
     font-size: 1rem;
     font-weight: 400;
@@ -221,19 +221,19 @@
     border: 1px solid rgb(238, 236, 236);
     cursor: pointer;
 }
-.order-dokter input{
+.profil-dokter input{
 
     border-radius: 8px;
     background-color:rgba(0, 163, 118, 1);
 
 }
 
-.order-dokter label:hover{
+.profil-dokter label:hover{
     border: 1px solid rgba(0, 163, 118, 1);
     background-color: #fff;
 }
 
-.order-dokter form .button-form{
+.profil-dokter form .button-form{
     width: 100%;
     height: 48px;
     margin-top: 8px;
@@ -250,7 +250,7 @@
     text-decoration: none;
 }
 
-.order-dokter form .disabled{
+.profil-dokter form .disabled{
     width: 100%;
     height: 48px;
     margin-top: 8px;
@@ -265,7 +265,7 @@
     justify-content: center;
     text-decoration: none;
 }
-.order-dokter form button.clicked
+.profil-dokter form button.clicked
 {
     height: 48px;
 
@@ -292,4 +292,272 @@
 .next-page{
     width: 100%;
     height: auto;
+}
+
+.profil-detail .card-order{
+    display: none;
+}
+
+
+@media screen and (max-width:540px) {
+    .profil-dokter{
+        margin: 0 20px;
+
+    }
+    
+    .profil-detail{
+        gap: 1rem;
+        width: 100%;
+        padding-left: 0;
+        padding-top: 0.5rem;
+    }
+    
+    .order-dokter{
+        display: none;
+    }
+    .card-profil-dokter{
+        gap: 12px;
+        height: 6rem;
+    }
+    
+    .card-profil-dokter .card-profil-img{
+        width: 40%;
+        height: 100%;
+    }
+    
+    .card-profil-dokter .card-profil-body{
+        padding-bottom: 14px;
+        width: 80%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 8px;
+    }
+    
+    .card-profil-body h3{
+        font-size: 1rem;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+    .card-profil-body p{
+        font-size: 12px;
+        font-weight: 400;
+        
+    }
+    
+    .card-profil-body .icon-star{
+        display: flex;
+        justify-content: space-between;
+        width: 7rem;
+        align-items: center;
+        height: 2rem;
+        margin: 0;
+    }
+    
+    .icon-star p{
+        font-size: 12px;
+        margin-right: 4px;
+        align-self: center;
+        color: black;
+        font-weight: 600;
+    }
+    
+    .icon-star .ic-star{
+        font-size: 1rem;
+        color: rgb(255, 215, 0);
+    }
+    
+    .card-profil-detail{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+    
+    }
+    
+    .card-profil-detail h3{
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 14px;
+    }
+    
+    .card-profil-detail p{
+        font-size: 1.15rem;
+        font-weight: 400;
+        margin-bottom: 24px;
+        color: #66707A;
+    }
+    
+    
+    .card-profil-detail span{
+        font-size: 1rem;
+        font-weight: 400;
+        margin-bottom: 14px;
+    }
+    
+    .card-profil-detail h6{
+        font-size: 1rem;
+        font-weight: 700;
+        margin-bottom: 4px;
+    }
+ 
+    .card-order{
+        padding: 8px;
+    }
+    
+    .profil-dokter h3{
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+    
+    .type-consult{
+        gap: 0.5rem;
+        height: auto;
+        margin-bottom: 8px;
+        padding: 8px;
+        border-radius: 8px;
+    }
+    
+    .jenis-consult{
+        gap: 0.5rem;
+        height: 1rem;
+        margin-top: 8px;
+        border-radius: 8px;
+    }
+    
+    .consult{
+        display: flex;
+        justify-content: space-between;
+        width: 12.5rem;
+    }
+    .jenis-consult .ic{
+        align-self: center;
+        font-size: 2rem;
+        color: rgb(14, 13, 13);
+        
+    }
+    
+    .jenis-consult p{
+        align-self: center;
+        font-size: 12px;
+        font-weight: 400;
+        color: black;
+    
+    }
+    .type-consult .ic{
+        align-self: center;
+        font-size: 1.5rem;
+        color: rgb(14, 13, 13);
+        
+    }
+    
+    .type-consult select{
+        width: 100%;
+        font-size: 12px;
+        font-weight: 400;
+        padding: 8px;
+        border-radius: 8px;
+        color: black;
+        border: 1px solid rgb(163, 163, 163);
+    
+    }
+    
+    
+    .profil-dokter form{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        padding: 8px;
+    }
+    
+    
+    .profil-dokter label{
+        border-radius: 8px;
+        font-size: 12px;
+        font-weight: 400;
+        margin-bottom: 8px;
+        display: flex;
+        gap:8px;
+        padding: 8px;
+        font-weight: 600;
+        border: 1px solid rgb(238, 236, 236);
+        cursor: pointer;
+    }
+    .profil-dokter input{
+        padding: 10px;
+    
+        border-radius: 8px;
+        background-color:rgba(0, 163, 118, 1);
+    
+    }
+    
+    .profil-dokter label:hover{
+        border: 1px solid rgba(0, 163, 118, 1);
+        background-color: #fff;
+    }
+    
+    .profil-dokter form .button-form{
+        width: 100%;
+        height: 28px;
+        margin-top: 8px;
+        font-size: 12px;
+        border-radius: 8px;
+        padding: 10px;
+
+    }
+    
+    .profil-dokter form .disabled{
+        height: 28px;
+        margin-top: 8px;
+        font-size: 12px;
+        padding: 10px;
+        font-weight: 500;
+        border-radius: 8px;
+    }
+    .profil-dokter form button.clicked
+    {
+        height: 28px;
+    
+        border-radius: 8px;
+        margin-top: 8px;
+        font-size: 12px;
+        font-weight: 500;
+        background-color: white;
+     
+    }
+    
+    .card-profil-detail{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+    
+    }
+    
+    .card-profil-detail p{
+        font-size: 14px;
+        font-weight: 400;
+        margin-bottom: 24px;
+        color: #66707A;
+    }
+    
+    
+    .card-profil-detail span{
+        font-size: 12px;
+        font-weight: 400;
+        margin-bottom: 14px;
+    }
+    
+    .card-profil-detail h6{
+        font-size: 12px;
+        font-weight: 700;
+        margin-bottom: 4px;
+    }
+    
 }

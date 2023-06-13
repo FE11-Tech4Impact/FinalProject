@@ -57,3 +57,62 @@
     margin-bottom: 8px;
 }
 
+@media Screen and (max-width: 540px) {
+    .JenisSakit {
+      width: 100%;
+  
+      margin: 40px 0;
+      padding: 0 20px;
+    }
+  
+    .card-jenissakit {
+      margin-top: 12px;
+    }
+  
+    .card-jenissakit .row{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 18.9rem;
+      gap: 14px;
+      overflow-y: hidden;
+      margin: 0;
+  
+    }
+    .card-sakit {
+      display: flex;
+      padding:0;
+      border-radius: 10px;
+      text-align: center;
+      max-width: 6rem;
+      margin: 0;
+    }
+
+    
+.JenisSakit .card-title {
+      font-size: 14px;
+      font-weight: 500;
+      color: black;
+    }
+  
+    .card-jenissakit .col-sm-2 {
+      width: 6rem;
+      padding: 0;
+  
+    }
+  
+    .card-jenissakit .col-sm-2:nth-child(0) {
+      display: none;
+    }
+    .card-jenissakit .card-body {
+      padding: 0;
+      width: 5rem;
+      height: 5rem;
+    }
+  
+    .card-jenissakit .card-body img{
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+  
