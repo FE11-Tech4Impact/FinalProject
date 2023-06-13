@@ -1,0 +1,120 @@
+.banner{
+    margin: 40px 120px;
+    background-color: rgb(27, 190, 117);
+    border-radius: 16px;
+}
+
+.banner-cover{
+    margin: 40px 24px;
+   
+}
+
+.banner-title{
+    font-size: 48px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.banner-text{
+    font-size: 20px;
+    font-weight: 400;
+    color: #fff;
+}
+
+
+.banner .btn-success{
+    margin-top: 16px;
+    background-color: #fff;
+    color: rgb(27, 190, 117);
+    border: 1px solid rgb(27, 190, 117);
+}
+
+.ban-btn{
+    background-color: #fff;
+    color: rgb(27, 190, 117);
+    border: 1px solid rgb(27, 190, 117);
+}
+.cariDokter{
+    margin: 80px 120px;
+}
+
+.cariDokter-content{
+    margin-bottom: 24px;
+}
+
+.cariDokter-title{
+    font-size: 32px;
+    font-weight: 700;
+    color: #000;
+}
+
+/* .cariDokter-title{
+    font-size: 30px;
+    font-weight: 700;
+    color: #000;
+} */
+
+
+.dokterRekomendasi{
+    margin: 0 120px;
+}
+
+
+.JenisSakit .row .bt2{
+    display: none;
+}
+
+@media Screen and (max-width: 540px) {
+
+    .banner{
+        margin: 40px 20px;
+        border-radius: 16px;
+    }
+    
+    .banner-cover{
+        margin: 20px 12px;
+       
+    }
+    
+    .banner-title{
+        font-size: 24px;
+        font-weight: 700;
+    }
+    
+   
+    .banner-text{
+        font-size: 12px;
+        font-weight: 400;
+    }
+    
+    .banner .btn{
+        margin-top: 48px;
+        font-size: 12px;
+        
+    }
+    
+    .col-sm-6 img{
+        display: none;
+    }
+
+    .JenisSakit .rekomendasi-title{
+        font-size: 22px;
+    }   
+
+    .JenisSakit .row .bt1{
+        display: none;
+    }
+
+    .JenisSakit .col-sm-2:last-child{
+        display: block;
+        margin-top: 1.5rem;
+    }
+
+    .JenisSakit .btn{
+        width: 100%;
+        font-size: 12px;
+    }
+
+   
+
+}

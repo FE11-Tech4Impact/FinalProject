@@ -1,0 +1,44 @@
+.daftar{
+    height: 394px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(59, 183, 143, 0.12);
+    margin: 0 120px;
+    margin-top: 80px;
+    border-radius: 12px;
+
+    
+}
+
+.daftar-title{
+    text-align: center;
+    width: 865px;
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+    color: black;
+}
+
+.daftar form{
+    background-color: white;
+    border-radius: 12px;
+    padding: 21px 24px;
+    margin: 0;
+    margin-top: 2rem;
+
+}
+
+.daftar form input{
+    margin-right: 124px;
+    height: 80%;
+    width: 19rem;
+    border: none;
+}
+
+@media screen and (max-width:540px) {
+    .daftar{
+        display: none;
+    }
+}

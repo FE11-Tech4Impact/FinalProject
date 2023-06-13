@@ -1,0 +1,97 @@
+.artikel{
+    margin: 0 120px;
+}
+
+.artikel-title{
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #121212;
+}
+
+.card-body img{
+    border-radius: 12px;
+    margin-bottom: 16px;
+}
+
+.card-text{
+    font-size: 16px;
+    color: #78828A;
+}
+.artikel .bt2{
+    display:none ;
+}
+
+@media screen and (max-width:540px) {
+
+    .artikel{
+        margin: 40px 20px;
+    }
+    
+    .artikel-title{
+        font-size: 24px;
+        margin: 0;
+    }
+
+    .artikel .card-testimonial .row{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 90rem;
+        margin-top: 0;
+    }
+    .artikel    .card-body {
+        border: 1px solid #e2e2e2;
+
+        flex-direction: column;
+        display: flex;
+        padding: 12px;
+        border-radius: 12px;
+        padding: 8px;
+
+    }
+    .artikel    .col-sm-4{
+        display: flex;
+        padding: 12px;
+    }
+    .card-body img{
+        width: 100%;
+        
+        border-radius: 12px;
+    }
+    
+    .artikel .bt1{
+        display: none;
+    }
+
+    .artikel .bt2{
+        display: block;
+        margin-top: 12px;
+    }
+
+    .artikel .card-testimonial{
+        margin:0;
+    }
+    .artikel .card-text{
+        height: 4.5rem;
+        overflow-y: hidden;
+        font-size: 12px;
+        color: #000000;
+        margin-bottom: 0;
+    }
+    
+    .artikel .card-title{
+        color: #000000;
+        margin: 0;
+        font-size: 16px;
+        height: 4rem;
+    }
+
+    .artikel .btn{
+        width: 100%;
+        margin-top: 8px;
+        font-size: 12px;
+    }
+    
+}
+
