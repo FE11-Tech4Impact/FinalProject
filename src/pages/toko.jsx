@@ -15,7 +15,6 @@ const Toko = () => {
             <Breadcrumb.Item active="active">Obat</Breadcrumb.Item>
           </Breadcrumb>
           <h1>Cari Obat</h1>
-          
         <CardJenisSakit />
       </div>
     </div>

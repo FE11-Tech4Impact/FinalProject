@@ -98,11 +98,7 @@ export const Header = () => {
             >
               Artikel
             </NavLink>
-            <NavLink
-              to="/tokoObat"
-              className="nav-link"
-              activeClassName="active"
-            >
+            <NavLink to="/toko" className="nav-link" activeClassName="active">
               Toko Obat
             </NavLink>
 
