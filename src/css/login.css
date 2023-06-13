@@ -1,6 +1,5 @@
 .login-form {
-    /* width: 300px; */
-    margin: 0 800px;
+    margin: 0 500px;
     align-items: center;
     justify-content: center;
     
@@ -41,7 +40,7 @@
 
   
   .register-form {
-    margin: 0 800px;
+    margin: 0 500px;
     align-items: center;
     justify-content: center;
     

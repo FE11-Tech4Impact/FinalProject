@@ -277,7 +277,6 @@ const UserDetail = () => {
                   <Link
                   className="disabled"
                   to={`/login`}
-                  
                 >
                   Lanjutkan Pemesanan
                 </Link>
