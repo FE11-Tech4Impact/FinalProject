@@ -1,6 +1,5 @@
 .detailartikel{
     margin: 40px 120px;
-
 }
 
 .detailartikel h2{
@@ -18,4 +17,18 @@
 .detailartikel p{
     font-size: 18px;
     color: #78828A;
+}
+
+@media Screen and (max-width: 540px) {
+    .detailartikel{
+        margin: 0 16px;
+    }
+
+    .detailartikel h2{
+        font-size: 24px;
+    }
+
+    .detailartikel p{
+        font-size: 16px;
+    }
 }

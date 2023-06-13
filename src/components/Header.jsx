@@ -115,7 +115,9 @@ export const Header = () => {
           <div className="button-header">
             {!loggedInUser ? (
               <>
-                <Button variant="outline-success">Daftar</Button>
+                <Link to="/register" className="btn btn-outline-success">
+                  Register
+                </Link>
                 <Link to="/login" className="btn btn-success">
                   Masuk
                 </Link>
@@ -182,7 +184,7 @@ export const Header = () => {
                     Artikel
                   </Link>
                   <Link
-                    to="/tokoObat"
+                    to="/toko"
                     className="nav-link"
                     activeClassName="active"
                   >

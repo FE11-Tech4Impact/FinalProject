@@ -4,6 +4,7 @@ import Breadcrumb from 'react-bootstrap/Breadcrumb';
 import '../css/toko.css';
 import CardJenisSakit from '../components/cardJenisSakit';
 
+
 const Toko = () => {
   return (
       <div>
@@ -14,7 +15,7 @@ const Toko = () => {
             </Breadcrumb.Item>
             <Breadcrumb.Item active="active">Obat</Breadcrumb.Item>
           </Breadcrumb>
-          <h1>Cari Obat</h1>
+          <h2>Cari Obat</h2>
         <CardJenisSakit />
       </div>
     </div>

@@ -163,7 +163,7 @@ const UserDetail = () => {
                 {isConfirm ? (
                   <Link
                   className="disabled"
-                  to={``}
+                  to={`/login`}
                   
                 >
                   Lanjutkan Pemesanan
@@ -276,7 +276,11 @@ const UserDetail = () => {
                 {isConfirm ? (
                   <Link
                   className="disabled"
+<<<<<<< HEAD
                   to={``}
+=======
+                  to={`/login`}
+>>>>>>> responsive-aryo
                   
                 >
                   Lanjutkan Pemesanan
