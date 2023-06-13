@@ -46,14 +46,14 @@
 
     .suksesorder h5 {
         margin: 0 10px;
-
+        margin-top:8px;
         font-size: 14px;
         font-weight: 500;
         color: #00A376;
     }
     
     .image-sukses {
-        width: 210px;
+        width: 230px;
         height: 230px;
     }
 
@@ -63,7 +63,7 @@
         background-color: #00A376;
         padding: 8px 16px;
         border: none;
-        margin-top: 4px;
+        margin-top: 12px;
 
     }
 }

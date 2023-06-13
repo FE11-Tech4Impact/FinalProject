@@ -234,6 +234,7 @@
 }
 
 .profil-dokter form .button-form{
+    cursor: pointer;
     width: 100%;
     height: 48px;
     margin-top: 8px;
@@ -243,7 +244,6 @@
     font-size: 14px;
     font-weight: 500;
     color: white;
-    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -264,11 +264,12 @@
     align-items: center;
     justify-content: center;
     text-decoration: none;
+    cursor: not-allowed;
 }
 .profil-dokter form button.clicked
 {
     height: 48px;
-
+    cursor: pointer;
     margin-top: 8px;
     color:rgba(0, 163, 118, 1);
     border: 1px solid rgb(27, 190, 117);
