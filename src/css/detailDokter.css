@@ -300,6 +300,10 @@
 
 
 @media screen and (max-width:540px) {
+   .profil-detail .card-order{
+    display: flex;
+}
+   
     .profil-dokter{
         margin: 0 20px;
 
