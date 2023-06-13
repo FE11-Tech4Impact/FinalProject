@@ -39,14 +39,10 @@ const Home = () => {
             <div className="col-sm-2 text-end">
                 <a href="/toko" className="btn btn-success">
                     Lihat Semuanya 
-                </Link>
+                </a>
             </div>
             <CardJenisSakit/>
-            <div className="bt2 col-sm-2 text-end">
-                <Link to="/artikel" className="btn btn-success">
-                    Lihat Semuanya 
-                </Link>
-            </div>
+       
         </div>
     </div>
 
