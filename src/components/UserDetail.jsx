@@ -274,14 +274,9 @@ const UserDetail = () => {
               </button>
               <div className="next-page">
                 {isConfirm ? (
-                  <Link
+                   <Link
                   className="disabled"
-<<<<<<< HEAD
-                  to={``}
-=======
                   to={`/login`}
->>>>>>> responsive-aryo
-                  
                 >
                   Lanjutkan Pemesanan
                 </Link>
