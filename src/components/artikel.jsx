@@ -22,24 +22,25 @@ const Artikel = () => {
   return (
     <div>
       <div className="artikel">
-        <div className="row">
-          <div className="col-sm-10">
-            <h3 className="artikel-title">Artikel Kesehatan</h3>
-          </div>
-          <div className="col-sm-2 text-end bt1">
-            <a href="/artikel" className="btn btn-success">
-              Lihat Semuanya
-            </a>
-          </div>
-          <div className="card-testimonial">
+      <div className="row artikel-1">
+  <div className="col-sm-10">
+    <h3 className="artikel-title">Artikel Kesehatan</h3>
+  </div>
+  <div className="col-sm-2 text-end bt1">
+    <a href="/artikel" className="btn btn-success">Lihat selengkapnya</a>
+  </div>
+</div>
+
+
+          <div className="artikel-list">
             <div className="row">
               {articles.map((article) => (
                 <div className="col-sm-4" key={article.id}>
-                  <div className="card-body">
+                  <div className="card-body border-0">
                     <img src={article.image} alt="Gambar" style={{ width: '100%', height: 'auto' }} />
-                    <h5 className="card-title">{article.title}</h5>
+                    <h5 className="article-tittle">{article.title}</h5>
                     <p className="card-text">{article.text}</p>
-                    <Link to={`/detail-artikel/${article.id}`} className="btn btn-success">
+                    <Link to={`/detail-artikel/${article.id}`} className="btn btn-success btn-more">
                   Lihat Selengkapnya
                 </Link>
                   </div>
@@ -48,12 +49,11 @@ const Artikel = () => {
             </div>
           </div>
           <div className="col-sm-2 text-end bt2">
-            <a href="/artikel" className="btn btn-success">
+            <a href="/artikel" className="btn btn-outline-success btn-viewmore">
               Lihat Semuanya
             </a>
           </div>
 
-        </div>
       </div>
     </div>
   );
