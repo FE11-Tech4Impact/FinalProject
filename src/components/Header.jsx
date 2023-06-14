@@ -168,6 +168,7 @@ export const Header = () => {
                     to="/"
                     className="nav-link"
                     activeClassName="active"
+                    onClick={{toggleSide}}
                   >
                     Beranda
                   </Link>
