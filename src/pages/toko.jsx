@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 import Breadcrumb from 'react-bootstrap/Breadcrumb';
 import '../css/toko.css';
 import CardJenisSakit from '../components/cardJenisSakit';
-import Footer from '../components/footer';
-import BannerDaftar from '../components/bannerDaftar';
+import BannerDaftar from '../components/BannerDaftar';
+import Footer from '../components/Footer';
+
 
 
 const Toko = () => {
@@ -21,7 +22,7 @@ const Toko = () => {
         <CardJenisSakit />
       </div>
       <BannerDaftar />
-      <Footer />
+    <Footer />
     </div>
     
   );
