@@ -407,6 +407,7 @@
   
     .fil2{
       display: flex;
+        margin:0;
     }
     .fil1{
       display:none;
@@ -416,10 +417,12 @@
       display: none;
     }
     .filtering {
+        margin:0;
       width: 100%;
       height: auto;
       display: flex;
       padding: 0;
+        background-color:red;
       justify-content: space-between;
     }
   
