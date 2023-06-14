@@ -107,8 +107,8 @@ const UserList = () => {
             <label>
               <input
                 type="checkbox"
-                value="umum"
-                checked={selectedJobs.includes("umum")}
+                value="Umum"
+                checked={selectedJobs.includes("Umum")}
                 onChange={handleJobSelection}
               />
               Umum
@@ -116,8 +116,8 @@ const UserList = () => {
             <label>
               <input
                 type="checkbox"
-                value="Spesialis Mata"
-                checked={selectedJobs.includes("Spesialis Mata")}
+                value="Mata"
+                checked={selectedJobs.includes("Mata")}
                 onChange={handleJobSelection}
               />
               Mata
@@ -236,7 +236,7 @@ const UserList = () => {
                         <p className="card-text">{user.job}</p>
                         <div className="card-price">
                           Mulai Dari{" "}
-                          <span>$. {user.price.toLocaleString('en-US')}</span>
+                          <span>Rp. {user.price.toLocaleString('en-US')}</span>
                         </div>
                         <Link
                           className="btn btn-success"

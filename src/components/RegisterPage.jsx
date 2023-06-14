@@ -94,6 +94,10 @@ const RegisterPage = () => {
         </div>
         <button type="submit">Register</button>
       </form>
+
+      <p className="text-link">
+            Sudah Memiliki akun? <a href="/login">Masuk</a>
+          </p>
     </div>
   );
 };
