@@ -108,10 +108,6 @@ const Cart = () => {
     navigate('/sukses-order');
   };
 
-  const handleClearCart = () => {
-    setCart([]); // Mengatur keranjang menjadi array kosong
-  };
-
   const onSuccess = (details, data) => {
     // Logic to be executed after successful payment
     console.log('Payment succeeded:', details, data);
@@ -129,6 +125,10 @@ const Cart = () => {
   const onError = (err) => {
     // Logic to be executed if an error occurs
     console.error('Error during payment:', err);
+  };
+
+  const handleClearCart = () => {
+    setCart([]);
   };
 
   return (
