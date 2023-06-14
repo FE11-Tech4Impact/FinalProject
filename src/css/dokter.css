@@ -7,6 +7,9 @@
     margin-top: 1.5rem;
   }
   
+  .res-filter{
+    display: none;
+  }
   /* Pagination */
   .daftar-dokter {
     display: flex;
@@ -15,6 +18,9 @@
     margin-top: 2rem;
   }
   
+  .fil2{
+    display: none;
+  }
   .daftar-dokter li {
     display: flex;
     justify-content: center;
@@ -351,7 +357,7 @@
     .search-bar {
       display: flex;
       justify-content: space-between;
-      margin-bottom: 1.5rem;
+      margin-bottom: 0px;
       width: 100%;
     }
   
@@ -364,7 +370,7 @@
   
     .hal-dokter .price-filter {
       width: 12rem;
-      margin-left: 76px;
+      margin-left: 165px;
       height: 1rem;
       align-items: center;
     }
@@ -398,6 +404,16 @@
       height: auto;
     }
   
+    .fil2{
+      display: flex;
+    }
+    .fil1{
+      display:none;
+    }
+    
+    .fil1 .jenis-spesialis{
+      display: none;
+    }
     .filtering {
       width: 100%;
       height: auto;
@@ -446,7 +462,7 @@
     }
   
     .hal-dokter .main-row {
-      background-color: rgba(0, 163, 118, 1);
+      background-color: rgb(236, 235, 235);
       display: flex;
       gap: 0;
       padding-top: 2rem;
@@ -455,6 +471,7 @@
       margin: 0;
       height: 103.5rem;
       overflow-y: hidden;
+      border: none;
     }
     .hal-dokter .main {
       display: flex;
@@ -564,6 +581,22 @@
       height: 32px;
     }
     
+    .res-filter{
+      display: flex;
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: 500;
+      margin: 0;
+      background-color: rgba(0, 163, 118, 1);
+
+      width: 100%;
+      padding: 4px;
+      border: 1px solid rgb(27, 190, 117);
+      border-radius: 8px;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
   }
   
 

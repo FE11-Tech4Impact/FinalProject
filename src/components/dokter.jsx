@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import "../css/dokter.css";
 import "../globalstyle.css";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { Button } from "bootstrap";
 
 // import { userContext } from '../context/userContext'
 
@@ -13,6 +15,7 @@ const UserList = () => {
   const usersPerPage = 8; // Jumlah data per halaman
   const [selectedPriceFilter, setSelectedPriceFilter] = useState("All");
   // const { doctor } = useContext( userContext );
+  const [move, setMove] = useState(false);
 
   useEffect(() => {
     fetch("https://64527770a2860c9ed40d2a69.mockapi.io/doctor")
@@ -101,7 +104,7 @@ const UserList = () => {
       </div>
 
       <div className="page-dokter">
-        <div className="filtering">
+        <div className="filtering fil1">
           <div className="jenis-spesialis">
             <p>Jenis Spesialis :</p>
             <label>
@@ -214,6 +217,131 @@ const UserList = () => {
             </label>
           </div>
         </div>
+
+        <div className="res-filter" onClick={() => setMove(!move)}>
+          Pilih Jenis Spesialis
+        </div>
+        {move && (
+          <>
+            <motion.div
+              className="filtering fil2"
+              animate={{ y: move ? 10 : -50, scale: move ? 1 : 0 }}
+              transition={{ duration: 0.4 }}
+            >
+              <div className="jenis-spesialis">
+                <p>Jenis Spesialis :</p>
+                <label>
+                  <input
+                    type="checkbox"
+                    value="umum"
+                    checked={selectedJobs.includes("umum")}
+                    onChange={handleJobSelection}
+                  />
+                  Umum
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    value="Spesialis Mata"
+                    checked={selectedJobs.includes("Spesialis Mata")}
+                    onChange={handleJobSelection}
+                  />
+                  Mata
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    value="Spesialis Jiwa"
+                    checked={selectedJobs.includes("Spesialis Jiwa")}
+                    onChange={handleJobSelection}
+                  />
+                  Jiwa
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    value="Spesialis Otak"
+                    checked={selectedJobs.includes("Spesialis Otak")}
+                    onChange={handleJobSelection}
+                  />
+                  Otak
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    value="Spesialis Kandungan"
+                    checked={selectedJobs.includes("Spesialis Kandungan")}
+                    onChange={handleJobSelection}
+                  />
+                  Kandungan
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    value="Spesialis Anak"
+                    checked={selectedJobs.includes("Spesialis Anak")}
+                    onChange={handleJobSelection}
+                  />
+                  Anak
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    value="Spesialis Penyakit Dalam"
+                    checked={selectedJobs.includes("Spesialis Penyakit Dalam")}
+                    onChange={handleJobSelection}
+                  />
+                  Penyakit Dalam
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    value="Spesialis THT"
+                    checked={selectedJobs.includes("Spesialis THT")}
+                    onChange={handleJobSelection}
+                  />
+                  THT
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    value="Spesialis Ortopedi"
+                    checked={selectedJobs.includes("Spesialis Ortopedi")}
+                    onChange={handleJobSelection}
+                  />
+                  Ortopedi
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    value="Spesialis Paru"
+                    checked={selectedJobs.includes("Spesialis Paru")}
+                    onChange={handleJobSelection}
+                  />
+                  Paru
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    value="Spesialis Bedah Umum"
+                    checked={selectedJobs.includes("Spesialis Bedah Umum")}
+                    onChange={handleJobSelection}
+                  />
+                  Bedah Umum
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    value="Spesialis Jantung"
+                    checked={selectedJobs.includes("Spesialis Jantung")}
+                    onChange={handleJobSelection}
+                  />
+                  Jantung
+                </label>
+              </div>
+            </motion.div>
+          </>
+        )}
 
         <div className="dokterRekomendasi">
           <div className="row main-row">
