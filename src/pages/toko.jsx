@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import Breadcrumb from 'react-bootstrap/Breadcrumb';
 import '../css/toko.css';
 import CardJenisSakit from '../components/cardJenisSakit';
+import Footer from '../components/footer';
+import BannerDaftar from '../components/bannerDaftar';
 
 
 const Toko = () => {
@@ -18,6 +20,8 @@ const Toko = () => {
           <h2>Cari Obat</h2>
         <CardJenisSakit />
       </div>
+      <BannerDaftar />
+      <Footer />
     </div>
     
   );
