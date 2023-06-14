@@ -176,6 +176,7 @@ export const Header = () => {
                     to="/cari-dokter"
                     className="nav-link"
                     activeClassName="active"
+                    onClick={{toggleSide}}
                   >
                     Cari Dokter
                   </Link>
@@ -183,6 +184,7 @@ export const Header = () => {
                     to="/artikel"
                     className="nav-link"
                     activeClassName="active"
+                    onClick={{toggleSide}}
                   >
                     Artikel
                   </Link>
@@ -190,6 +192,7 @@ export const Header = () => {
                     to="/tokoObat"
                     className="nav-link"
                     activeClassName="active"
+                    onClick={{toggleSide}}
                   >
                     Toko Obat
                   </Link>
