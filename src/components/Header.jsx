@@ -7,7 +7,6 @@ import {
   HiChevronDown,
   HiMenu,
 } from "react-icons/hi";
-import { motion } from "framer-motion";
 import React, { useState, useContext, useRef, useEffect } from "react";
 import "../css/header.css";
 import Logo from "../assets/logo.png";
@@ -163,7 +162,7 @@ export const Header = () => {
             </button>
             {isSide && (
               <>
-                <motion.div className="menu men-side" animate={{ y: move ? 10 : -50, scale: move ? 1 : 0 } transition={{ duration: 0.4 }}>
+                <div className="menu men-side">
                   <Link
                     exact
                     to="/"
@@ -208,7 +207,7 @@ export const Header = () => {
             </button>
               </>
             )}
-                </motion.div>
+                </div>
               </>
             )}
           </div>
