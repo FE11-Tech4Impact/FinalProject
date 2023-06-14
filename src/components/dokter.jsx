@@ -236,7 +236,7 @@ const UserList = () => {
                         <p className="card-text">{user.job}</p>
                         <div className="card-price">
                           Mulai Dari{" "}
-                          <span>Rp. {user.price.toLocaleString("id-ID")}</span>
+                          <span>$. {user.price.toLocaleString('us-USD')}</span>
                         </div>
                         <Link
                           className="btn btn-success"
