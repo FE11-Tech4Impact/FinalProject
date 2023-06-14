@@ -359,6 +359,8 @@
       justify-content: space-between;
       margin-bottom: 0px;
       width: 100%;
+      padding-right: 0;
+      padding: 2px;
     }
   
     .search-bar .search-dokter {
@@ -369,8 +371,7 @@
     }
   
     .hal-dokter .price-filter {
-      width: 12rem;
-      margin-left: 165px;
+      width: 7rem;
       height: 1rem;
       align-items: center;
     }
