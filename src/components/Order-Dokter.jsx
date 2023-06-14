@@ -137,7 +137,7 @@ const OrderDokter = () => {
         <div className="total-item">
           <p>Biaya Transaksi</p>
           <p>
-           <span>$. {userDetail.price.toLocaleString('us-USD')}</span>
+           <span>$. {userDetail.price.toLocaleString('en-US')}</span>
           </p>
         </div>
         <div className="total-item">
