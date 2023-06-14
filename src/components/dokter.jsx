@@ -4,6 +4,7 @@ import "../globalstyle.css";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Button } from "bootstrap";
+import { HiChevronDown } from "react-icons/hi";
 
 // import { userContext } from '../context/userContext'
 
@@ -220,6 +221,7 @@ const UserList = () => {
 
         <div className="res-filter" onClick={() => setMove(!move)}>
           Pilih Jenis Spesialis
+          <HiChevronDown className="dropdown-button" />
         </div>
         {move && (
           <>
