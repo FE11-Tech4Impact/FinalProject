@@ -7,6 +7,7 @@ import {
   HiChevronDown,
   HiMenu,
 } from "react-icons/hi";
+import { motion } from "framer-motion";
 import React, { useState, useContext, useRef, useEffect } from "react";
 import "../css/header.css";
 import Logo from "../assets/logo.png";
@@ -25,10 +26,10 @@ export const Header = () => {
   const ref = useRef(null);
   const fer = useRef(null);
   const [isSide, setIsSide] = useState(false);
-
+  const [move, setMove] = useState(false);
   const toggleMenu = () => {
     setClickCount(clickCount + 1);
-
+    setMove(!move)
     if (clickCount === 1) {
       setIsOpen(false);
       setClickCount(0);
@@ -162,7 +163,7 @@ export const Header = () => {
             </button>
             {isSide && (
               <>
-                <div className="menu men-side">
+                <motion.div className="menu men-side" animate={{ y: move ? 10 : -50, scale: move ? 1 : 0 } transition={{ duration: 0.4 }}>
                   <Link
                     exact
                     to="/"
@@ -207,7 +208,7 @@ export const Header = () => {
             </button>
               </>
             )}
-                </div>
+                </motion.div>
               </>
             )}
           </div>
