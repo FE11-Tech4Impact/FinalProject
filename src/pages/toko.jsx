@@ -12,12 +12,16 @@ const Toko = () => {
   return (
       <div>
         <div className="toko">
-          <Breadcrumb>
+          <div className="breadcumb">
+            <Breadcrumb>
             <Breadcrumb.Item>
-              <Link to="/">Home</Link>
+              <Link to='/' className='bread-item'>Home</Link>
             </Breadcrumb.Item>
-            <Breadcrumb.Item active="active">Obat</Breadcrumb.Item>
-          </Breadcrumb>
+            
+            <Breadcrumb.Item active="active" className='bread-item-active'>Toko</Breadcrumb.Item>
+      </Breadcrumb>
+          </div>
+        
           <h2>Cari Obat</h2>
         <CardJenisSakit />
       </div>

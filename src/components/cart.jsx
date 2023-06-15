@@ -25,11 +25,12 @@ const Cart = () => {
   useEffect(() => {
     setCart(cartItems);
   }, [cartItems]);
-
+  
   useEffect(() => {
     const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
     setTotalItems(totalItems);
   }, [cart]);
+  
 
   const handleRemove = (productId) => {
     removeFromCart(productId);
@@ -160,7 +161,7 @@ const Cart = () => {
                             </div>
                             <div className="cart-item-info">
                               <h5 className="cart-item-title">{item.name}</h5>
-                              <p className="cart-item-price">$ {item.price}</p>
+                              <p className="cart-item-price">Rp. {item.price}</p>
                             </div>
                           </div>
                           <div className="cart-item-actions">
@@ -201,7 +202,7 @@ const Cart = () => {
                   {cart.length > 0 ? (
                     <>
                       {/* <p>Price: {totalItems}</p> */}
-                      <p>Total Harga:<strong className='totalprice'>${getTotalPrice()} </strong></p>
+                      <p>Total Harga:<strong className='totalprice'>Rp.{getTotalPrice()} </strong></p>
                       <div className="paypalbutton">
                         <PayPalButtons
                           style={{ layout: 'horizontal' }}

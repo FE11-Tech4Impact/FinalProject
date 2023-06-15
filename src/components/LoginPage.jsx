@@ -85,6 +85,10 @@ const LoginPage = () => {
             </div>
             <button type="submit">Login</button>
           </form>
+
+          <p className="text-link">
+            Belum punya akun? <a href="/register">Daftar</a>
+          </p>
         </>
       )}
     </div>
