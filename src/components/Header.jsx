@@ -25,10 +25,10 @@ export const Header = () => {
   const ref = useRef(null);
   const fer = useRef(null);
   const [isSide, setIsSide] = useState(false);
-
+  const [move, setMove] = useState(false);
   const toggleMenu = () => {
     setClickCount(clickCount + 1);
-
+    setMove(!move)
     if (clickCount === 1) {
       setIsOpen(false);
       setClickCount(0);
@@ -166,6 +166,7 @@ export const Header = () => {
                     to="/"
                     className="nav-link"
                     activeClassName="active"
+                    onClick={{toggleSide}}
                   >
                     Beranda
                   </Link>
@@ -173,6 +174,7 @@ export const Header = () => {
                     to="/cari-dokter"
                     className="nav-link"
                     activeClassName="active"
+                    onClick={{toggleSide}}
                   >
                     Cari Dokter
                   </Link>
@@ -180,6 +182,7 @@ export const Header = () => {
                     to="/artikel"
                     className="nav-link"
                     activeClassName="active"
+                    onClick={{toggleSide}}
                   >
                     Artikel
                   </Link>
@@ -187,6 +190,7 @@ export const Header = () => {
                     to="/toko"
                     className="nav-link"
                     activeClassName="active"
+                    onClick={{toggleSide}}
                   >
                     Toko Obat
                   </Link>
