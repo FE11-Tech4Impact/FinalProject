@@ -1,0 +1,43 @@
+.detailartikel{
+    margin: 40px 120px;
+}
+
+.detailartikel h2{
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #121212;
+}
+
+.detailartikel img{
+    border-radius: 12px;
+    margin-bottom: 16px;
+}
+
+.detailartikel p{
+    font-size: 18px;
+    color: #78828A;
+}
+
+
+.loader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+}
+
+@media Screen and (max-width: 540px) {
+    .detailartikel{
+        margin: 0 16px;
+    }
+
+    .detailartikel h2{
+        font-size: 24px;
+    }
+
+    .detailartikel p{
+        font-size: 16px;
+    }
+}

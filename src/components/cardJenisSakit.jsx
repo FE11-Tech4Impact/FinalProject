@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../css/cardsakit.css';
-import Anak from '../assets/penyakit/anak.png';
-import Umum from '../assets/penyakit/Umum.png';
+import Anak from '../assets/penyakit/Anak.png';
+import Umum from '../assets/penyakit/umum.png';
 import Jantung from '../assets/penyakit/Jantung.png';
 import Jiwa from '../assets/penyakit/Jiwa.png';
 import Kandungan from '../assets/penyakit/Kandungan.png';
@@ -10,7 +10,7 @@ import Mata from '../assets/penyakit/Mata.png';
 import Ortopedi from '../assets/penyakit/Ortopedi.png';
 import BedahUmum from '../assets/penyakit/BedahUmum.png';
 import Otak from '../assets/penyakit/otak.png';
-import Paru from '../assets/penyakit/paru.png';
+import Paru from '../assets/penyakit/Paru.png';
 import THT from '../assets/penyakit/tht.png';
 import PenyakitDalam from '../assets/penyakit/Penyakit Dalam.png';
 
@@ -45,7 +45,7 @@ const CardJenisSakit = () => {
                     width="64px"
                     height="64px"
                   />
-                  <h5 className="card-title">{card.title}</h5>
+                  <h5 className="title-sakit">{card.title}</h5>
                 </div>
               </Link>
             </div>

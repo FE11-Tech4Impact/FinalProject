@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import "../css/dokter.css";
 import "../globalstyle.css";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { Button } from "bootstrap";
+import { HiChevronDown } from "react-icons/hi";
 
 // import { userContext } from '../context/userContext'
 
@@ -13,6 +16,7 @@ const UserList = () => {
   const usersPerPage = 8; // Jumlah data per halaman
   const [selectedPriceFilter, setSelectedPriceFilter] = useState("All");
   // const { doctor } = useContext( userContext );
+  const [move, setMove] = useState(false);
 
   useEffect(() => {
     fetch("https://64527770a2860c9ed40d2a69.mockapi.io/doctor")
@@ -101,14 +105,14 @@ const UserList = () => {
       </div>
 
       <div className="page-dokter">
-        <div className="filtering">
+        <div className="filtering fil1">
           <div className="jenis-spesialis">
             <p>Jenis Spesialis :</p>
             <label>
               <input
                 type="checkbox"
-                value="umum"
-                checked={selectedJobs.includes("umum")}
+                value="Umum"
+                checked={selectedJobs.includes("Umum")}
                 onChange={handleJobSelection}
               />
               Umum
@@ -116,8 +120,8 @@ const UserList = () => {
             <label>
               <input
                 type="checkbox"
-                value="Spesialis Mata"
-                checked={selectedJobs.includes("Spesialis Mata")}
+                value="Mata"
+                checked={selectedJobs.includes("Mata")}
                 onChange={handleJobSelection}
               />
               Mata
@@ -125,8 +129,8 @@ const UserList = () => {
             <label>
               <input
                 type="checkbox"
-                value="Spesialis Jiwa"
-                checked={selectedJobs.includes("Spesialis Jiwa")}
+                value="Jiwa"
+                checked={selectedJobs.includes("Jiwa")}
                 onChange={handleJobSelection}
               />
               Jiwa
@@ -134,8 +138,8 @@ const UserList = () => {
             <label>
               <input
                 type="checkbox"
-                value="Spesialis Otak"
-                checked={selectedJobs.includes("Spesialis Otak")}
+                value="Otak"
+                checked={selectedJobs.includes("Otak")}
                 onChange={handleJobSelection}
               />
               Otak
@@ -143,8 +147,8 @@ const UserList = () => {
             <label>
               <input
                 type="checkbox"
-                value="Spesialis Kandungan"
-                checked={selectedJobs.includes("Spesialis Kandungan")}
+                value="Kandungan"
+                checked={selectedJobs.includes("Kandungan")}
                 onChange={handleJobSelection}
               />
               Kandungan
@@ -152,8 +156,8 @@ const UserList = () => {
             <label>
               <input
                 type="checkbox"
-                value="Spesialis Anak"
-                checked={selectedJobs.includes("Spesialis Anak")}
+                value="Anak"
+                checked={selectedJobs.includes("Anak")}
                 onChange={handleJobSelection}
               />
               Anak
@@ -161,8 +165,8 @@ const UserList = () => {
             <label>
               <input
                 type="checkbox"
-                value="Spesialis Penyakit Dalam"
-                checked={selectedJobs.includes("Spesialis Penyakit Dalam")}
+                value="Penyakit Dalam"
+                checked={selectedJobs.includes("Penyakit Dalam")}
                 onChange={handleJobSelection}
               />
               Penyakit Dalam
@@ -171,7 +175,7 @@ const UserList = () => {
               <input
                 type="checkbox"
                 value="Spesialis THT"
-                checked={selectedJobs.includes("Spesialis THT")}
+                checked={selectedJobs.includes("THT")}
                 onChange={handleJobSelection}
               />
               THT
@@ -179,8 +183,8 @@ const UserList = () => {
             <label>
               <input
                 type="checkbox"
-                value="Spesialis Ortopedi"
-                checked={selectedJobs.includes("Spesialis Ortopedi")}
+                value="Ortopedi"
+                checked={selectedJobs.includes("Ortopedi")}
                 onChange={handleJobSelection}
               />
               Ortopedi
@@ -188,8 +192,8 @@ const UserList = () => {
             <label>
               <input
                 type="checkbox"
-                value="Spesialis Paru"
-                checked={selectedJobs.includes("Spesialis Paru")}
+                value="Paru"
+                checked={selectedJobs.includes("Paru")}
                 onChange={handleJobSelection}
               />
               Paru
@@ -197,8 +201,8 @@ const UserList = () => {
             <label>
               <input
                 type="checkbox"
-                value="Spesialis Bedah Umum"
-                checked={selectedJobs.includes("Spesialis Bedah Umum")}
+                value="Bedah Umum"
+                checked={selectedJobs.includes("Bedah Umum")}
                 onChange={handleJobSelection}
               />
               Bedah Umum
@@ -206,14 +210,140 @@ const UserList = () => {
             <label>
               <input
                 type="checkbox"
-                value="Spesialis Jantung"
-                checked={selectedJobs.includes("Spesialis Jantung")}
+                value="Jantung"
+                checked={selectedJobs.includes("Jantung")}
                 onChange={handleJobSelection}
               />
               Jantung
             </label>
           </div>
         </div>
+
+        <div className="res-filter" onClick={() => setMove(!move)}>
+          Pilih Jenis Spesialis
+          <HiChevronDown className="dropdown-button" />
+        </div>
+        {move && (
+          <>
+            <motion.div
+              className="filtering fil2"
+              animate={{ y: move ? 10 : -50, scale: move ? 1 : 0 }}
+              transition={{ duration: 0.4 }}
+            >
+              <div className="jenis-spesialis">
+                <p>Jenis Spesialis :</p>
+                <label>
+                  <input
+                    type="checkbox"
+                    value="Umum"
+                    checked={selectedJobs.includes("Umum")}
+                    onChange={handleJobSelection}
+                  />
+                  Umum
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    value="Mata"
+                    checked={selectedJobs.includes("Mata")}
+                    onChange={handleJobSelection}
+                  />
+                  Mata
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    value="Jiwa"
+                    checked={selectedJobs.includes("Jiwa")}
+                    onChange={handleJobSelection}
+                  />
+                  Jiwa
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    value="Otak"
+                    checked={selectedJobs.includes("Otak")}
+                    onChange={handleJobSelection}
+                  />
+                  Otak
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    value="Kandungan"
+                    checked={selectedJobs.includes("Kandungan")}
+                    onChange={handleJobSelection}
+                  />
+                  Kandungan
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    value="Anak"
+                    checked={selectedJobs.includes("Anak")}
+                    onChange={handleJobSelection}
+                  />
+                  Anak
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    value="Penyakit Dalam"
+                    checked={selectedJobs.includes("Penyakit Dalam")}
+                    onChange={handleJobSelection}
+                  />
+                  Penyakit Dalam
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    value="THT"
+                    checked={selectedJobs.includes("THT")}
+                    onChange={handleJobSelection}
+                  />
+                  THT
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    value="Ortopedi"
+                    checked={selectedJobs.includes("Ortopedi")}
+                    onChange={handleJobSelection}
+                  />
+                  Ortopedi
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    value="Paru"
+                    checked={selectedJobs.includes("Paru")}
+                    onChange={handleJobSelection}
+                  />
+                  Paru
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    value="Bedah"
+                    checked={selectedJobs.includes("Bedah")}
+                    onChange={handleJobSelection}
+                  />
+                  Bedah Umum
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    value="Jantung"
+                    checked={selectedJobs.includes("Jantung")}
+                    onChange={handleJobSelection}
+                  />
+                  Jantung
+                </label>
+              </div>
+            </motion.div>
+          </>
+        )}
 
         <div className="dokterRekomendasi">
           <div className="row main-row">
@@ -236,7 +366,7 @@ const UserList = () => {
                         <p className="card-text">{user.job}</p>
                         <div className="card-price">
                           Mulai Dari{" "}
-                          <span>Rp. {user.price.toLocaleString("id-ID")}</span>
+                          <span>Rp. {(user.price* 1000).toLocaleString()}</span>
                         </div>
                         <Link
                           className="btn btn-success"

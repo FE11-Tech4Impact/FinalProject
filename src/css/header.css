@@ -27,6 +27,9 @@ p {
   box-sizing: border-box;
 }
 
+.side{
+  display: none;
+}
 .logo {
   gap: 8px;
   width: 48px;
@@ -103,51 +106,6 @@ p {
   height: 100%;
   box-sizing: border-box;
 }
-<<<<<<< HEAD:src/components/header.css
-
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    padding: 16px 12px; 
-  }
-
-  .menubar {
-    justify-content: space-between;
-    gap: 12px; 
-  }
-
-  .logo {
-    gap: 4px; 
-    width: 28px; 
-  }
-
-  .menu {
-    display: flex; 
-  }
-
-  .beranda,
-  .cari-dokter,
-  .artikel,
-  .toko-obat {
-    font-size: 12px; 
-    font-weight: 400; 
-  }
-
-  .icons {
-    justify-content: flex-start; 
-  }
-
-  .search-icon,
-  .cart-icon {
-    width: 16px; 
-    height: 16px; 
-  }
-
-  .button-header {
-    display: flex; 
-  }
-}
-=======
 .info-title{
   display: flex;
   justify-content: space-between;
@@ -218,4 +176,175 @@ p {
   font-style: bold;
 
 }
->>>>>>> 35dfcf1f53d0625f0e2c34eb8dd9bce661bfe75e:src/css/header.css
+.cart-icon {
+  position: relative;
+  font-size: 20px;
+  margin-right: 10px;
+  color: #212529;
+  text-decoration: none;
+}
+
+.cart-item-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: #dc3545;
+  color: #fff;
+  font-size: 12px;
+  padding: 2px 5px;
+  border-radius: 50%;
+}
+
+.bt1{
+  display: none;
+}
+
+.keluar{
+  display: none;
+}
+
+.burger-icon {
+  display: none;
+}
+
+
+@media screen and (max-width: 540px) {
+
+  .menubar .men-nav{
+    display: none;
+  }
+
+  .side{
+    display: block;
+  }
+  .men-side{
+    right: 20px;
+    top: 4rem;
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    height: auto;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    width: 8.5rem;
+    background-color: rgb(255, 255, 255);
+    z-index: 99999;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 14px;
+
+  }
+
+  .keluar{
+    display: block;
+    border: none;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    color: red;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  
+  .navbar{
+    padding: 16px 20px;
+  }
+  
+  
+  .menubar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 24px;
+    height: fit-content;
+    box-sizing: border-box;
+  }
+  
+  .logo {
+    gap: 8px;
+    width: 36px;
+    height: 100%;
+  }
+  
+  
+  .beranda {
+    font-size: 12px;
+
+  }
+  
+  .cari-dokter,
+  .artikel,
+  .toko-obat {
+    color: rgba(120, 130, 138, 1);
+    font-size: 12px;
+    line-height: 140%;
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+  }
+  
+  .icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 16px;
+    box-sizing: border-box;
+  }
+  
+  .search-icon {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .cart-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .side{
+    border: none;
+    background-color: transparent;
+  }
+  .burger-icon {
+    display: block;
+    width: 20px;
+    height: 20px;
+  }
+
+  .dropdown{
+    display: none;
+  }
+
+  .navbar .outline-success,
+  .navbar .btn
+  {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .info-title .name{
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    background-color: rgb(27, 190, 117);
+    color: aliceblue;
+    font-size: 18px;
+    font-weight: 700;
+    font-style: bold;
+  
+  }
+
+  .info-title h6{
+    font-size: 14px;
+  }
+
+  .dropdown-side Link:hover{
+    color:  rgb(27, 190, 117);
+  }
+}

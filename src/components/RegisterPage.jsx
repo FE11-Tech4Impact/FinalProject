@@ -1,12 +1,14 @@
-import React, { useState, useContext } from "react";
-import { AuthContext } from "../context/AuthContext";
-import "../globalstyle.css";
+import React, { useState, useContext } from 'react';
+import { AuthContext } from '../context/AuthContext';
+import '../globalstyle.css';
+import '../css/login.css';
 
 const RegisterPage = () => {
-  const { isAuthenticated } = useContext(AuthContext);
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const { register } = useContext(AuthContext);
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
+  const [error, setError] = useState('');
 
   const handleUsernameChange = (event) => {
     setUsername(event.target.value);
@@ -16,26 +18,42 @@ const RegisterPage = () => {
     setPassword(event.target.value);
   };
 
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
+
+    // Periksa apakah username, password, dan email kosong
+    if (username.trim() === '' || password.trim() === '' || email.trim() === '') {
+      window.alert('Username, password, dan email harus diisi');
+      return;
+    }
+
     try {
-      const response = await fetch('https://64527770a2860c9ed40d2a69.mockapi.io/user', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ username, password }),
-      });
+      const response = await fetch(
+        'https://6454643dc18adbbdfeb53cd7.mockapi.io/api/fe-11/user',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ username, password, email }),
+        }
+      );
 
       if (response.ok) {
         // Registrasi berhasil
         // Lakukan penanganan registrasi berhasil
-        window.location.href = "/login"; // Redirect ke halaman login
+        register(username); // Set isAuthenticated ke true
+        window.location.href = '/';
         console.log('Registrasi berhasil');
       } else {
+        window.alert('Registrasi tidak berhasil');
         // Registrasi gagal
         // Lakukan penanganan registrasi gagal
-        setError('Gagal melakukan registrasi');
+        setError('Registrasi tidak berhasil');
       }
     } catch (error) {
       console.error('Terjadi kesalahan', error);
@@ -44,35 +62,42 @@ const RegisterPage = () => {
 
   return (
     <div>
-      <h2>Registration Page</h2>
-      {isAuthenticated ? (
-        <p>Anda sudah terautentikasi.</p>
-      ) : (
-        <>
-          {error && <p>{error}</p>}
-          <form onSubmit={handleSubmit}>
-            <div>
-              <label htmlFor="username">Username:</label>
-              <input
-                type="text"
-                id="username"
-                value={username}
-                onChange={handleUsernameChange}
-              />
-            </div>
-            <div>
-              <label htmlFor="password">Password:</label>
-              <input
-                type="password"
-                id="password"
-                value={password}
-                onChange={handlePasswordChange}
-              />
-            </div>
-            <button type="submit">Register</button>
-          </form>
-        </>
-      )}
+      {error && <p>{error}</p>}
+      <form onSubmit={handleSubmit} className="register-form">
+        <h2>Register</h2>
+        <div>
+          <label htmlFor="username">Username:</label>
+          <input
+            type="text"
+            id="username"
+            value={username}
+            onChange={handleUsernameChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="password">Password:</label>
+          <input
+            type="password"
+            id="password"
+            value={password}
+            onChange={handlePasswordChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            value={email}
+            onChange={handleEmailChange}
+          />
+        </div>
+        <button type="submit">Register</button>
+      </form>
+
+      <p className="text-link">
+            Sudah Memiliki akun? <a href="/login">Masuk</a>
+          </p>
     </div>
   );
 };

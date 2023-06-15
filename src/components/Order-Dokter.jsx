@@ -6,12 +6,12 @@ import { OrderContext } from "../context/OrderContext";
 import "../css/dokter.css";
 import "../css/detailDokter.css";
 import "../css/OrderPage.css";
-import Dana from '../dana.png';
-import Bri from '../bri.png';
-import Shopee from '../shopee.png';
-
-
+import { useNavigate } from "react-router-dom";
 import { Icon } from "@iconify/react";
+import { SyncLoader  } from 'react-spinners';
+import { css } from '@emotion/react';
+
+
 
 const OrderDokter = () => {
   const { id } = useParams();
@@ -23,6 +23,8 @@ const OrderDokter = () => {
   const [promoCode, setPromoCode] = useState('');
   const [totalPrice, setTotalPrice] = useState(0);
   const [priceDiscount, setPriceDiscount] = useState(0);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchUserDetail = async () => {
@@ -39,8 +41,20 @@ const OrderDokter = () => {
     fetchUserDetail();
   }, [id]);
 
+  const override = css`
+  display: block;
+  margin: 0 auto;
+  border-color: red;
+
+`;
+
+
   if (!userDetail) {
-    return <p className="load">Loading...</p>;
+    return (
+      <div className="loader">
+        <SyncLoader  color="#36d7b7" loading={!userDetail} css={override} size={24} />
+      </div>
+    );
   }
 
 
@@ -72,17 +86,13 @@ const OrderDokter = () => {
   };
 
   const handleSubmit = (event) => {
-    console.log(category);
-
     event.preventDefault();
     updatePrice(totalPrice);
-    console.log(totalPrice);
     updateSelectedPay(category);
-    console.log(category);
-
-    setName("");
-    setCategory("");
+  
+    navigate('/sukses-order-dokter');
   };
+  
 
 
   return (
@@ -115,7 +125,7 @@ const OrderDokter = () => {
                   <p>{inputValue}</p>
                 </div>
                 <div className="jenis-consult">
-                  <Icon icon="akar-icons:schedule" className="ic" />
+                  <Icon icon="akar-icons:schedule" className="ic ic-chat" />
                   <p>{selectedSchedule}</p>
                 </div>
               </div>
@@ -135,26 +145,6 @@ const OrderDokter = () => {
               onChange={handlePromoCodeChange}
             />
           </div>
-          <div className="form-order">
-            <label>Metode Pembayaran</label>
-            <select
-              value={category}
-              onChange={handlePay}
-            >
-              <option value="">Pilih Metode Pembayaran</option>
-              <option value="BRI">
-              <img src={Bri} alt="Gambar" className="pay-image" />
-                BANK BRI</option>
-              <option value="DANA">
-              <img src={Dana} alt="Gambar" className="pay-image" />
-                
-                DANA</option>
-              <option value="ShopeePay">
-              <img src={Shopee} alt="Gambar" className="pay-image" />
-                
-                SHOPEEPAY</option>
-            </select>
-          </div>
         </form>
       </div>
 
@@ -163,7 +153,7 @@ const OrderDokter = () => {
         <div className="total-item">
           <p>Biaya Transaksi</p>
           <p>
-           <span>Rp. {userDetail.price.toLocaleString("id-ID")}</span>
+           <span>Rp. {(userDetail.price* 1000).toLocaleString()}</span>
           </p>
         </div>
         <div className="total-item">

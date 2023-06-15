@@ -1,12 +1,12 @@
 import React, { useState, useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import "../globalstyle.css";
+import "../css/login.css";
 
 const LoginPage = () => {
   const { isAuthenticated, login, logout } = useContext(AuthContext);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
 
   const handleUsernameChange = (event) => {
     setUsername(event.target.value);
@@ -15,31 +15,41 @@ const LoginPage = () => {
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
   };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
+
+    // Periksa apakah username dan password kosong
+    if (username.trim() === "" || password.trim() === "") {
+      window.alert("Username dan password harus diisi");
+      return;
+    }
+
     try {
-      const response = await fetch('https://64527770a2860c9ed40d2a69.mockapi.io/user', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ username, password }),
-      });
+      const response = await fetch(
+        "https://6454643dc18adbbdfeb53cd7.mockapi.io/api/fe-11/user",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ username, password }),
+        }
+      );
 
       if (response.ok) {
         // Login berhasil
         // Lakukan penanganan login berhasil
         login(username); // Set isAuthenticated ke true
         window.location.href = "/";
-        console.log('Login berhasil');
+        console.log("Login berhasil");
       } else {
-        alert('Salah Kontol')
+        window.alert("Login tidak berhasil");
         // Login gagal
         // Lakukan penanganan login gagal
-        setErrorMessage('Username atau password salah');
       }
     } catch (error) {
-      console.error('Terjadi kesalahan', error);
+      console.error("Terjadi kesalahan", error);
     }
   };
 
@@ -49,13 +59,12 @@ const LoginPage = () => {
 
   return (
     <div>
-      <h2>Login Page</h2>
       {isAuthenticated ? (
         <></>
       ) : (
         <>
-          {error && <p>{error}</p>}
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} className="login-form">
+            <h2>Masuk</h2>
             <div>
               <label htmlFor="username">Username:</label>
               <input
@@ -76,6 +85,10 @@ const LoginPage = () => {
             </div>
             <button type="submit">Login</button>
           </form>
+
+          <p className="text-link">
+            Belum punya akun? <a href="/register">Daftar</a>
+          </p>
         </>
       )}
     </div>

@@ -2,20 +2,28 @@
   margin: 80px 120px;
 }
 
+.dokter{
+  margin-bottom: 16px;
+}
+
 
 .dokter-image {
     width: 100%;
     height: 100%;
-    background-size: cover;
+    object-fit: cover;
     border-radius: 16px;
+    margin-bottom: 16px;
   }
   
   .rekomendasi-title {
+    height: 100%;
+    background-size: cover;
+    border-radius: 16px;
     font-size: 30px;
     font-weight: bold;
     margin-bottom: 20px;
-    margin-bottom: 20px;
   }
+  
   
   .card {
     margin-bottom: 20px;
@@ -33,6 +41,27 @@
     cursor: pointer;
   }
   
+  .card-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 8px;
+  }
+
+  .card-text {
+    font-size: 16px;
+    font-weight: 400;
+    color: #000;
+    margin-bottom: 8px;
+  }
+
+  .card-price {
+    font-size: 16px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 8px;
+
+  }
 
   .comp-2{
     display: flex;
@@ -73,18 +102,146 @@
     color: #F58736;
   }
 
-
   .comp-1{
     width: 350px;
     height: 250px;
     padding: 0;
   }
 
-
-
   .dokter-daftar{
     border-radius: 12px;
     padding-top: 1.1rem;
     background: url('https://lh3.googleusercontent.com/pw/AMWts8CjhmcbQCxQH-RrDzcWI93V4MI9U-QIB4WCbUUzx1o_j0RM4RErYLHR7DeEtZLGt6dxVflk5VzgN5pCSI5APLuV8aGhKPvOaLDYIANqbRVZv90QqwxmIk2Ia7kRjbw5ctOO-jcLvR9swM5muOliVSFu=w837-h568-s-no?authuser=0');
     background-size: cover;
+  }
+
+  @media Screen and (max-width: 540px) {
+    .dokterRekomendasi .rekomendasi-title {
+      font-size: 24px;
+      margin-bottom: 0;
+    }
+    
+    .dokterRekomendasi{
+      margin: 40px 20px;
+    }
+
+
+    .dokterRekomendasi .row .row{
+      margin: 0 5px;
+    }
+
+   .dokter-daftar{
+    margin: 0 20px;
+    display: flex;
+    justify-content: center;
+        border-radius: 12px;
+        padding-top: 1.1rem;
+        background: #fff;
+        height: 57.5rem;
+        overflow-y: hidden;
+        gap:1rem;
+      }
+
+    .dokterRekomendasi .col-sm-3{
+      width: 20rem;
+      height: 28rem;
+      display: flex;
+      justify-content: center;
+    }
+    
+    .dokter-image {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        border-radius: 16px;
+      }
+      
+      .dokterRekomendasi .artikel-title{
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      
+      .dokter-daftar .card {
+        margin-bottom: 10px;
+        border-radius: 16px;
+        background-color: #fff;
+        overflow: hidden;
+        cursor: pointer;
+        width: 18rem;
+        height: auto;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+
+      }
+      
+      .dokter-daftar .card-body{
+        padding: 16px 0;
+      }      
+    
+
+      .comp-2{
+        margin-top: 18px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        height: 8rem;
+        gap: 8px;
+    
+      }
+    
+      .comp-2 .card-title {
+        margin-top: 18px;
+        font-size: 18px;
+        font-weight: 700;
+        color: #000;
+        margin: 0;
+        margin-bottom: 8px;
+      }
+    
+      .comp-2 .card-text {
+        font-size: 14px;
+        margin: 0;
+        font-weight: 400;
+        color: #000;
+      }
+    
+      .comp-2 .card-price {
+        font-size: 14px;
+        margin: 0;
+        font-weight: 400;
+        color: #000;
+      }
+    
+      .comp-2 span{
+        font-size: 16px;
+        margin: 0;
+        font-weight: 700;
+        color: #F58736;
+      }
+
+      .comp-2 .btn {
+        font-size: 12px;
+      }
+    
+    
+      .comp-1{
+        width: 350px;
+        height: 250px;
+        padding: 0;
+        margin-bottom: 24px;
+      }
+    
+      .dokterRekomendasi .col-sm-2{
+        position: absolute;
+        top: 80rem;
+        right: 40px;
+        left: 40px;
+        width: 100%;
+        font-size: 12px;
+        display: none;
+
+    }
+    
+
   }

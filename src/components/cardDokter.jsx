@@ -1,5 +1,6 @@
+// import dokter1 from '../assets/dokter/dokter1.png';
+import '../css/carddokter.css';
 import React, { useState, useEffect } from "react";
-import '../css/cardDokter.css';
 import { Link } from 'react-router-dom';
 
 
@@ -18,13 +19,13 @@ const UserList = () => {
   return (
 
 <div className="dokterRekomendasi">
-<div className="row">
+<div className="row dokter">
           <div className="col-sm-10">
-            <h3 className="artikel-title">Dokter Rekomendasi</h3>
+            <h3 className="rekomendasi-title">Dokter Rekomendasi</h3>
           </div>
           <div className="col-sm-2 text-end">
             <a href="/cari-dokter" className="btn btn-success">
-              Lihat Semuanya
+              Lihat selengkapnya
             </a>
           </div>
       </div>
@@ -44,7 +45,7 @@ const UserList = () => {
                   <div className="comp-2 col-sm-12">
                     <h5 className="card-title">dr. {user.name.substring(0, 12)}</h5>
                     <p className="card-text">{user.job}</p>
-                    <div className="card-price">Mulai Dari <span>Rp. {user.price.toLocaleString('id-ID')}</span></div>
+                    <div className="card-price">Mulai Dari <span>Rp. {(user.price* 1000).toLocaleString()}</span></div>
                     <Link  className="btn btn-success" to={`/profil-dokter/${user.id}`}>Mulai Konsultasi</Link>
 
                   </div>
