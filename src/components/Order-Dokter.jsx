@@ -8,6 +8,10 @@ import "../css/detailDokter.css";
 import "../css/OrderPage.css";
 import { useNavigate } from "react-router-dom";
 import { Icon } from "@iconify/react";
+import { SyncLoader  } from 'react-spinners';
+import { css } from '@emotion/react';
+
+
 
 const OrderDokter = () => {
   const { id } = useParams();
@@ -37,8 +41,20 @@ const OrderDokter = () => {
     fetchUserDetail();
   }, [id]);
 
+  const override = css`
+  display: block;
+  margin: 0 auto;
+  border-color: red;
+
+`;
+
+
   if (!userDetail) {
-    return <p className="load">Loading...</p>;
+    return (
+      <div className="loader">
+        <SyncLoader  color="#36d7b7" loading={!userDetail} css={override} size={24} />
+      </div>
+    );
   }
 
 

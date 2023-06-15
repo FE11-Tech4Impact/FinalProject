@@ -19,6 +19,15 @@
     color: #78828A;
 }
 
+
+.loader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+}
+
 @media Screen and (max-width: 540px) {
     .detailartikel{
         margin: 0 16px;
