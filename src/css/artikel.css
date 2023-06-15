@@ -1,23 +1,41 @@
 .artikel{
-    margin: 0 120px;
+    margin: 80px 120px;
 }
 
+.artikel-1{
+    margin-bottom: 24px;
+}
+
+
 .artikel-title{
-    font-size: 24px;
+    font-size: 32px;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
     color: #121212;
 }
+
 
 .card-body img{
     border-radius: 12px;
     margin-bottom: 16px;
 }
 
+.article-tittle{
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    color: #121212;
+}
+
 .card-text{
     font-size: 16px;
     color: #78828A;
 }
+
+.artikel .bt1 {
+    display: block;
+  }
+
 .artikel .bt2{
     display:none ;
 }
@@ -25,24 +43,23 @@
 @media screen and (max-width:540px) {
 
     .artikel{
-        margin: 40px 20px;
+        margin: 40px 16px;
     }
+    
     
     .artikel-title{
         font-size: 24px;
         margin: 0;
     }
 
-    .artikel .card-testimonial .row{
+    .artikel .artikel-list .row{
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        height: 92rem;
         margin-top: 0;
     }
-    .artikel    .card-body {
+    .artikel  .card-body {
         border: 1px solid #e2e2e2;
-
         flex-direction: column;
         display: flex;
         padding: 12px;
@@ -56,42 +73,44 @@
     }
     .card-body img{
         width: 100%;
-        
         border-radius: 12px;
     }
     
-    .artikel .bt1{
+    .artikel .bt1 {
         display: none;
-    }
+      }
 
     .artikel .bt2{
         display: block;
         margin-top: 12px;
     }
 
-    .artikel .card-testimonial{
+    .artikel .artikel-list{
         margin:0;
     }
     .artikel .card-text{
-        height: 4.5rem;
         overflow-y: hidden;
-        font-size: 12px;
-        color: #000000;
-        margin-bottom: 0;
+        font-size: 16px;
+        color: #78828A;
+        margin-bottom: 16px;
     }
     
-    .artikel .card-title{
-        color: #000000;
+    .artikel-list .card-title{
+        color: #121212;
         margin: 0;
-        font-size: 16px;
-        height: 4rem;
+        font-size: 18px;
     }
 
-    .artikel .btn{
+    .btn-viewmore{
         width: 100%;
-        margin-top: 8px;
-        font-size: 12px;
     }
     
+    .btn-more{
+        height: 40px;
+        width: 100%;
+        border-radius: 8px;
+        align-items: center;
+        
+    }
 }
 

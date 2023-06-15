@@ -108,10 +108,6 @@ const Cart = () => {
     navigate('/sukses-order');
   };
 
-  const handleClearCart = () => {
-    setCart([]); // Mengatur keranjang menjadi array kosong
-  };
-
   const onSuccess = (details, data) => {
     // Logic to be executed after successful payment
     console.log('Payment succeeded:', details, data);
@@ -129,6 +125,10 @@ const Cart = () => {
   const onError = (err) => {
     // Logic to be executed if an error occurs
     console.error('Error during payment:', err);
+  };
+
+  const handleClearCart = () => {
+    setCart([]);
   };
 
   return (
@@ -150,16 +150,20 @@ const Cart = () => {
                     <>
                       {cart.map((item) => (
                         <div key={item.id} className="cart-item">
-                          <div className="cart-item-image">
-                            <img
-                              src={item.image || fallbackImage}
-                              alt="Gambar"
-                              className="product-image"
-                            />
-                          </div>
                           <div className="cart-item-details">
-                            <h5 className="cart-item-title">{item.name}</h5>
-                            <p className="cart-item-price">$ {item.price}</p>
+                            <div className="cart-item-image">
+                              <img
+                                src={item.image || fallbackImage}
+                                alt="Gambar"
+                                className="product-image"
+                              />
+                            </div>
+                            <div className="cart-item-info">
+                              <h5 className="cart-item-title">{item.name}</h5>
+                              <p className="cart-item-price">$ {item.price}</p>
+                            </div>
+                          </div>
+                          <div className="cart-item-actions">
                             <div className="counter">
                               <button
                                 className="counter-btn counter-decrease"
@@ -234,20 +238,22 @@ const Cart = () => {
                       <Form.Group controlId="name">
                         <Form.Label>Nama</Form.Label>
                         <div className="row">
-                          <div className="col">
+                          <div className="col-sm-12 col-md-6">
                             <Form.Control
                               type="text"
                               placeholder="Masukkan nama depan"
                               value={firstName}
                               onChange={handleFirstNameChange}
+                              className="firstname"
                             />
                           </div>
-                          <div className="col">
+                          <div className="col-sm-12 col-md-6">
                             <Form.Control
                               type="text"
                               placeholder="Masukkan nama belakang"
                               value={lastName}
                               onChange={handleLastNameChange}
+                              className="lastname"
                             />
                           </div>
                         </div>
@@ -257,20 +263,22 @@ const Cart = () => {
                       <Form.Group controlId="contact">
                         <Form.Label>Kontak</Form.Label>
                         <div className="row">
-                          <div className="col">
+                          <div className="col-sm-12 col-md-6">
                             <Form.Control
                               type="email"
                               placeholder="Masukkan email"
                               value={email}
                               onChange={handleEmailChange}
+                              className="email"
                             />
                           </div>
-                          <div className="col">
+                          <div className="col-sm-12 col-md-6">
                             <Form.Control
                               type="text"
                               placeholder="Masukkan nomor telepon"
                               value={phone}
                               onChange={handlePhoneChange}
+                              className="phone"
                             />
                           </div>
                         </div>
@@ -291,15 +299,16 @@ const Cart = () => {
                       <Form.Group controlId="cityPostal">
                         <Form.Label>Kota dan Kode Pos</Form.Label>
                         <div className="row">
-                          <div className="col">
+                          <div className="col-sm-12 col-md-6">
                             <Form.Control
                               type="text"
                               placeholder="Masukkan kota"
                               value={city}
                               onChange={handleCityChange}
+                              className="city"
                             />
                           </div>
-                          <div className="col">
+                          <div className="col-sm-12 col-md-6">
                             <Form.Control
                               type="text"
                               placeholder="Masukkan kode pos"
@@ -310,24 +319,6 @@ const Cart = () => {
                         </div>
                       </Form.Group>
                     </div>
-                    {/* <div className="payment">
-                      <Form.Group controlId="paymentMethod">
-                      <Form.Label>Metode Pembayaran</Form.Label>
-                      <Form.Control
-                        as="select"
-                        value={paymentMethod}
-                        onChange={handlePaymentMethodChange}
-                      >
-                        <option value="paypal">PayPal</option>
-                        <option value="gopay">GoPay</option>
-                        <option value="ovo">OVO</option>
-                      </Form.Control>
-                    </Form.Group>
-                    </div>
-                    
-                    <Button variant="primary" onClick={handleCheckout}>
-                      Checkout
-                    </Button> */}
                   </Form>
                 </div>
               </div>

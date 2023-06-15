@@ -1,5 +1,5 @@
 .cart {
-  margin: 0 120px ;
+  margin: 24px 120px ;
 }
 
 .cart-pembungkus {
@@ -13,6 +13,8 @@
   display: flex;
   align-items: center;
   padding: 10px;
+  gap: 16px;
+  
 }
 
 .cart-pembungkus h1 {
@@ -22,8 +24,8 @@
 
 .cart-item-image {
   width: 100px;
-  height: 100px;
-  margin-right: 20px;
+  height: auto;
+  margin-right: 8px;
 }
 
 .cart-item-image img {
@@ -37,14 +39,14 @@
 }
 
 .cart-item-title {
-  font-size: 16px;
+  font-size: 18px;
   color: #070717;
 }
 
 .cart-item-price {
-  font-size: 16px;
+  font-size: 18px;
   color: #00A376;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .counter {
@@ -132,7 +134,7 @@
 }
 
 .alamat{
-  margin-top: 24px;
+  margin-top: 16px;
   border: 1px solid #ddd;
   border-radius: 16px;
   padding: 24px;
@@ -146,13 +148,54 @@
   color: #070717;
 }
 
-.nama{
+.nama {
   margin-top: 24px;
 }
 
-.kontak{
+.nama label {
+  font-weight: bold;
+}
+
+
+.nama .col {
+  margin-bottom: 16px;
+}
+
+.nama .form-control {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ced4da;
+}
+
+.firstname{
+  margin-bottom: 16px;
+}
+
+.kontak {
   margin-top: 24px;
 }
+
+.kontak label {
+  font-weight: bold;
+}
+
+
+.kontak .col {
+  margin-bottom: 16px;
+}
+
+.kontak .form-control {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ced4da;
+}
+
+.email{
+  margin-bottom: 16px;
+}
+
 
 .alamat-form{
   margin-top: 24px;
@@ -162,6 +205,96 @@
   margin-top: 24px;
 }
 
+.city{
+  margin-bottom: 16px;
+}
+
 .payment{
   margin-top: 24px;
+}
+
+.cart-item-actions{
+  display: flex;
+  gap: 24px;
+  align-items: center;
+
+}
+
+
+@media screen and (max-width: 540px) {
+
+  .cart {
+    margin: 0 16px ;
+  }
+
+  .nama .row {
+    display: flex;
+  }
+
+  .nama .col {
+    flex: 1;
+    margin-right: 8px;
+    margin-bottom: 0;
+  }
+
+  .nama .col:last-child {
+    margin-right: 0;
+  }
+  
+  .kontak .row {
+    display: flex;
+  }
+
+  .kontak .col {
+    flex: 1;
+    margin-right: 8px;
+    margin-bottom: 0;
+  }
+
+  .kontak .col:last-child {
+    margin-right: 0;
+  }
+  
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cart-item-actions{
+    display: flex;
+    gap: 24px;
+  }
+
+  .cart-item-title {
+    font-size: 20px;
+    color: #070717;
+  }
+
+  .cart-item-price {
+    font-size: 20px;
+    color: #00A376;
+    font-weight: 700;
+  }
+
+  .cart-summary{
+    margin-top: 24px;
+
+  }
+
+  .alamat{
+    margin-top: 24px;
+  }
+
+  .cart-item-image {
+    width: 100px;
+    height: auto;
+    margin-right: 8px;
+  }
+  
+  .cart-item-image img {
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  
 }

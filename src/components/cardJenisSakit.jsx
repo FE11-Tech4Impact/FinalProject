@@ -45,7 +45,7 @@ const CardJenisSakit = () => {
                     width="64px"
                     height="64px"
                   />
-                  <h5 className="card-title">{card.title}</h5>
+                  <h5 className="title-sakit">{card.title}</h5>
                 </div>
               </Link>
             </div>

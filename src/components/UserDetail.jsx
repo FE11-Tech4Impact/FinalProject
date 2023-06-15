@@ -163,7 +163,7 @@ const UserDetail = () => {
                 {isConfirm ? (
                   <Link
                   className="disabled"
-                  to={``}
+                  to={`/login`}
                   
                 >
                   Lanjutkan Pemesanan
@@ -274,10 +274,9 @@ const UserDetail = () => {
               </button>
               <div className="next-page">
                 {isConfirm ? (
-                  <Link
+                   <Link
                   className="disabled"
-                  to={``}
-                  
+                  to={`/login`}
                 >
                   Lanjutkan Pemesanan
                 </Link>

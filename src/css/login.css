@@ -1,7 +1,5 @@
-
-  .login-form {
-    /* width: 300px; */
-    margin: 0 800px;
+.login-form {
+    margin: 0 500px;
     align-items: center;
     justify-content: center;
     
@@ -40,11 +38,9 @@
     background-color: #00A376;
   }  
 
-
   
   .register-form {
-    /* width: 300px; */
-    margin: 0 800px;
+    margin: 0 500px;
     align-items: center;
     justify-content: center;
     
@@ -83,3 +79,21 @@
   .register-form button:hover {
     background-color: #00A376;
   }  
+
+@media Screen and (max-width: 540px) {
+    .login-form{
+        margin: 40px;
+    }
+
+    .login-form h2{
+        font-size: 24px;
+    }
+
+    .login-form p{
+        font-size: 16px;
+    }
+
+    .register-form{
+        margin: 40px;
+    }
+}

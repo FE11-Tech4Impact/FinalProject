@@ -18,6 +18,7 @@ import SuksesDokter from './components/SuksesDokter';
 import ChatContainer from './components/ChatContainer';
 import OrderSukses from './components/OrderSukses';
 import Register from './pages/Register';
+import DetailArtikel from './components/DetailArtikel';
 
 
 
@@ -33,7 +34,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/cari-dokter" element={<CariDokter />} />
           <Route path="/artikel" element={<Artikel />} />
-          <Route path="/tokoobat" element={<Toko />} />
+          <Route path="/toko" element={<Toko />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/profil-dokter/:id" element={<DokterDetail />} />
@@ -43,6 +44,7 @@ function App() {
           <Route path="/sukses-order-dokter" element={<SuksesDokter />} />
           <Route path="/chat" element={<ChatContainer />} />
           <Route path="/sukses-order" element={<OrderSukses />} />
+          <Route path="/detail-artikel/:articleId" element={<DetailArtikel />} />
         </Routes>
         </OrderProvider>
         </UserProvider>
