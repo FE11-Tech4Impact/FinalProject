@@ -25,11 +25,12 @@ const Cart = () => {
   useEffect(() => {
     setCart(cartItems);
   }, [cartItems]);
-
+  
   useEffect(() => {
     const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
     setTotalItems(totalItems);
   }, [cart]);
+  
 
   const handleRemove = (productId) => {
     removeFromCart(productId);
